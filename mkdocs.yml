@@ -17,7 +17,6 @@ use_directory_urls: false
 # Menú de navegación (izquierda)
 nav:
   - Home: index.md
-  - Getting started:
   - Java basics:
     - Getting started: 01.md
     - Structure of a Java program: 01a.md
