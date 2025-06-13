@@ -1,0 +1,741 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/java2/01d.html">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Basic input and output - Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-input-and-output" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Java" class="md-header__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Java
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basic input and output
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Java" class="md-nav__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Java basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structure of a Java program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables and operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Basic input and output. 01d.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01e.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing clean code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-program-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Program output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Program output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-formatted-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Formatted output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-getting-user-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Getting user input
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Getting user input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-using-systemconsolereadline" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Using System.console().readLine()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="basic-input-and-output">Basic input and output<a class="headerlink" href="#basic-input-and-output" title="Permanent link">&para;</a></h1>
+<div style="text-align: right">
+<a target="_blank" href="slides/view.html?fichero=01d"><img src="images/diapositivas.png" width="32" /></a>
+</div>
+
+<p>In this document we are going to learn how to interact with final user. First of all, we will see how to print values in the screen using different instructions, and then we will see how to gather information from the keyboard and convert it to the appropriate data type.</p>
+<h2 id="1-program-output">1. Program output<a class="headerlink" href="#1-program-output" title="Permanent link">&para;</a></h2>
+<p>You can use the <code>System.out.print</code> or <code>System.out.println</code> instruction (depending on whether you want a new line at the end or not) to print messages to the screen. You can join multiple values by using the link operator (<code>+</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The result is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Have a nice day!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="11-formatted-output">1.1. Formatted output<a class="headerlink" href="#11-formatted-output" title="Permanent link">&para;</a></h3>
+<p>Apart from traditional <code>System.out.println</code> instruction to print data, we can use some other options if we want this data to have a given output format. To do this, we can use <code>System.out.printf</code> instruction instead of the previous one. This instruction behaves in a similar way than the original <code>printf</code> function from C language. It has a variable number of parameters, and the first of all is the string to be printed out. Then, this string can have some special characters inside it, which determine the data types that must replace these characters. For instance, if we use this instruction:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;The number is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
+</code></pre></div>
+<p>then the symbol <code>%d</code> will be replaced by the variable <code>number</code>, and this variable must be an integer (this is what <code>%d</code> means).</p>
+<p>There are some other symbols to represent different data types. Here are some of them:</p>
+<ul>
+<li><code>%d</code> for integer types (<code>long</code>, <code>int</code>)</li>
+<li><code>%f</code> for real types (<code>float</code> and <code>double</code>)</li>
+<li><code>%s</code> for strings</li>
+<li><code>%c</code> for characters</li>
+<li><code>%n</code> to represent a new line (similar to <code>\n</code>, but platform independent). In this case, we don't need to add a parameter at the end of <code>printf</code>.</li>
+</ul>
+<p>We can place as many symbols as we want inside the output string, and then we will need to add the corresponding number of parameters at the end of the <code>printf</code> instruction. For instance:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;The average of %d and %d is %f&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="n">number2</span><span class="p">,</span><span class="w"> </span><span class="n">average</span><span class="p">);</span>
+</code></pre></div>
+<p>Besides the primary symbols <code>%d</code> and <code>%f</code>, we can add some other information between the '%' and the letter, that specify some format information. </p>
+<p><strong>Specifying integer digits</strong></p>
+<p>For instance, if we want to output an integer with a given number of digits, we can do it this way:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;The number is %05d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
+</code></pre></div>
+<p>where <code>05</code> means that the integer is going to have, at least, 5 digits, and if there are not enough digits in the number, then it will be filled with zeros. The output of this instruction if number is <code>33</code> would be <code>The number is 00033</code>. If we don't put the <code>0</code>, then the number will be filled with whitespaces. So this instruction:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;The number is %10d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
+</code></pre></div>
+<p>if number is <code>33</code>, it would produce the following output: <code>The number is &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33</code>.</p>
+<p><strong>Specifying fraction digits</strong></p>
+<p>In the same way that we format integer numbers, we can format real numbers. We can use the same pattern seen before to specify the total number of integer digits:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;The number is %3f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
+</code></pre></div>
+<p>But, besides, we can specify the total number of fraction digits by adding a point and the total number desired, this way:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;The number is %3.3f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
+</code></pre></div>
+<p>Then, if number is <code>3.14159</code>, the output would be  <code>The number is &nbsp;&nbsp;3.142</code>.</p>
+<h2 id="2-getting-user-input">2. Getting user input<a class="headerlink" href="#2-getting-user-input" title="Permanent link">&para;</a></h2>
+<p>In order to get the user input, the easiest way may be through the <code>Scanner</code> object. We need to import <code>java.util.Scanner</code> in order to use it, and then we create a <code>Scanner</code> element and call some of its methods to read data from the user. Some of them are <code>nextLine</code> (to read a whole line of text until the user presses Enter) and <code>nextInt</code> (to read an integer explicitly):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClassName</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w">    </span>
+<span class="w">        </span><span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>There are some other methods, such as <code>nextFloat</code>, <code>nextBoolean</code>... but they are very similar to <code>nextInt</code>, and they help us read specific data types from the input, instead of reading texts and then converting them into the corresponding type (as <code>Console.ReadLine</code> does in C#). You can introduce this data separated by whitespaces or new lines (<em>Intro</em>).</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span>
+<span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Be careful when combining data types</strong></p>
+<p>Let's suppose that you have to read this information from the input:</p>
+<div class="highlight"><pre><span></span><code>23 43
+Hello world
+</code></pre></div>
+<p>You may think that you need to use <code>nextInt</code> method twice, and then <code>nextLine</code> method to read the last string, but this approach is NOT correct: when you use <code>nextInt</code> to read the integer values, you don't read the end of line that exists beyond number 43, so, when you use <code>nextLine</code> method once, you just read this new line, but not the second line. The correct sequence would be this one:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span>
+<span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+</code></pre></div>
+<p>Third line reads and discards the new line after number 43.</p>
+<h3 id="21-using-systemconsolereadline">2.1. Using System.console().readLine()<a class="headerlink" href="#21-using-systemconsolereadline" title="Permanent link">&para;</a></h3>
+<p>There's an additional way of reading data from user input. It consists in using <code>System.console().readLine()</code> method, which is similar to Scanner's <code>newLine</code> method: it reads the whole line until user presses <em>Intro</em>, so we ALWAYS read a string with this instruction, and we need to convert it to its corresponding data type later:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Write a number:&quot;</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">console</span><span class="p">().</span><span class="na">readLine</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+</code></pre></div>
+<p>The main drawback of this instruction is that it doesn't work well in the terminal of some IDEs, since the terminal of this IDE is not a <em>system</em> terminal, so you can't rely on it in certain situations.</p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
+<p>Create a program called <strong>FormattedDate</strong> with a class with the same name inside. The program will ask the user to enter the day, month and year of birth (all values are integers). Then, it will print his birth date with the format <em>d/m/y</em>. For instance, if the user types day = 7, month = 11, year = 1990, the program will output <em>7/11/1990</em>.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 2</p>
+<p>Create a program called <strong>GramOunceConverter</strong> that converts from grams to ounces. The program will ask the user to enter a weight in grams (an integer number), and then it will show the corresponding weight in ounces (a real number), taking into account that 1 ounce = 28.3495 grams.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 3</p>
+<p>Create a program called <strong>NumbersStrings</strong>. This program must ask the user to enter 4 numbers, that will be stored in 4 <code>String</code> variables. Then, the program will join the first pair of numbers into a single integer value, and the second pair of numbers into another integer value, and then add these values. For instance, if the user types the numbers 23, 11, 45 and 112, then the program will create a first integer value of 2311 and a second integer value of 45112. Then, it will add these two values and get a final result of 47423.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 4</p>
+<p>Create a program called <strong>CircleArea</strong> that defines a float constant called <code>PI</code> with the value <code>3.14159</code>. Then, the program will ask the user to enter the radius of a circle, and it will output the area of the circle (<code>PI</code> * radius * radius). This area will be printed with two decimal digits.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>This website uses cookies to offer you a better experience. By clicking "Accept," you agree to the use of cookies. You can also set your cookie preferences if you prefer.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

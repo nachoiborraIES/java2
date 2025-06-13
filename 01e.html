@@ -1,0 +1,1059 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/java2/01e.html">
+      
+      
+        <link rel="prev" href="01c.html">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Writing clean code - Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#writing-clean-code" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Java" class="md-header__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Java
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Writing clean code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Java" class="md-nav__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Java basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structure of a Java program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables and operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Basic input and output. 01d.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Writing clean code
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="01e.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing clean code
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-to-clean-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction to clean code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction to clean code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-what-is-clean-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. What is clean code?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-importance-of-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. The importance of practice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-why-bad-code-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Why bad code exists?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-whats-coming-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. What's coming next?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dealing-with-variable-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Dealing with variable names
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dealing with variable names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-uppercase-or-lowercase" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Uppercase or lowercase?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-placing-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Placing comments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Placing comments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-good-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Good comments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bad-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Bad comments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-to-clean-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction to clean code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction to clean code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-what-is-clean-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. What is clean code?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-importance-of-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. The importance of practice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-why-bad-code-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Why bad code exists?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-whats-coming-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. What's coming next?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dealing-with-variable-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Dealing with variable names
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dealing with variable names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-uppercase-or-lowercase" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Uppercase or lowercase?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-placing-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Placing comments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Placing comments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-good-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Good comments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bad-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Bad comments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="writing-clean-code">Writing clean code<a class="headerlink" href="#writing-clean-code" title="Permanent link">&para;</a></h1>
+<div style="text-align: right">
+<a target="_blank" href="slides/view.html?fichero=01e"><img src="images/diapositivas.png" width="32" /></a>
+</div>
+
+<h2 id="1-introduction-to-clean-code">1. Introduction to clean code<a class="headerlink" href="#1-introduction-to-clean-code" title="Permanent link">&para;</a></h2>
+<p>When we are writing a program, we should not only think about what the program needs to do. We should also ask some other questions to ourselves, such as:</p>
+<ul>
+<li>What if I have to take this project back in two years? Will I understand the code?</li>
+<li>What if anyone else has to take this project in the future? Will he/she understand the code?</li>
+</ul>
+<p>After these questions, you should think of a way to write your code so that it will be easy to read and understand. This is where clean code rules come into play.</p>
+<h3 id="11-what-is-clean-code">1.1. What is clean code?<a class="headerlink" href="#11-what-is-clean-code" title="Permanent link">&para;</a></h3>
+<p>You can find many examples and good explanations to this question in the book <em>Clean Code</em>, by Robert C. Martin. Here we just summarize some of these ideas:</p>
+<ul>
+<li>Code must be elegant and easy to read, simple and direct. <em>Clean code reads like well-written prose</em> (Grady Booch).</li>
+<li>Logic should be straightforward to make it hard for bugs to hide.</li>
+<li>Performance should be close to optimal so as not to tempt people to make further changes.</li>
+<li>Keep in mind the Boy Scout rule: <em>Leave the campground cleaner than you found it</em></li>
+</ul>
+<h3 id="12-the-importance-of-practice">1.2. The importance of practice<a class="headerlink" href="#12-the-importance-of-practice" title="Permanent link">&para;</a></h3>
+<p>Writing clean code not only consists in reading documents like this one to keep in mind some rules. It also consists in putting into practice these rules continuously. For instance, you can read how to ride a bike, but you won't learn how to do it until you practice.</p>
+<p>Besides, if we don't start writing clean code from the beginning of a project, there may be some terrible consequences later: projects can grow too much, and then it may be hard to apply clean code rules to the whole code: the time we spend fixing the code in the future may affect deadlines, maintenance, future versions...</p>
+<h3 id="13-why-bad-code-exists">1.3. Why bad code exists?<a class="headerlink" href="#13-why-bad-code-exists" title="Permanent link">&para;</a></h3>
+<p>Although everyone should apply clean code rules in their programs, and we can easily see the benefits of working this way, there are many reasons why bad code exists:</p>
+<ul>
+<li>Too tight schedules</li>
+<li>Unexperienced project managers</li>
+<li>Programmer's docility (he/she doesn't want to get fired)</li>
+<li>Boredom (always doing the same kind of projects)</li>
+<li>...</li>
+</ul>
+<h3 id="14-whats-coming-next">1.4. What's coming next?<a class="headerlink" href="#14-whats-coming-next" title="Permanent link">&para;</a></h3>
+<p>In this document we are going to focus on some basic aspects of clean code rules, such as how to assign variable names and how to place comments in our code.</p>
+<h2 id="2-dealing-with-variable-names">2. Dealing with variable names<a class="headerlink" href="#2-dealing-with-variable-names" title="Permanent link">&para;</a></h2>
+<p>Names are essential in programming, since we will assign a name to (almost) everything we include in our program. At this point you should already know what a variable is and its main purpose (store values that can be modified along the program execution). But you should not assign a variable name carelessly. You should use <strong>meaningful names</strong> for your variables. </p>
+<p>When reading the name of a variable (or any other element in the code), it must answer some basic questions, such as why it exists, what it does and how it is used. If a name requires a comment to explain its meaning, then it is not a suitable name. For instance, if we want to store in a variable the age average of a list of people, we should NOT do this:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">          </span><span class="c1">// Age average</span>
+</code></pre></div>
+<p>We could do this instead:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">ageAverage</span><span class="p">;</span>
+</code></pre></div>
+<p>Some other aspects that we should take into account when dealing with variable names:</p>
+<ul>
+<li>Try not to use too similar names. Variables like <code>totalRegisteredUsers</code> and <code>totalUnregisteredUsers</code> only differ in two letters, and you could use the wrong one in a given piece of code. It's better to call them <code>registered</code> and <code>anonymous</code>.</li>
+<li>Add <strong>meaningful context</strong> when it's necessary. For instance, if a variable is named <code>account</code>, what does it mean? A user account? a bank account? It's better to be more specific, and call it <code>bankAccount</code>, for instance</li>
+<li>Choose <strong>one word per concept</strong>: if you declare many variables in many parts of your code to refer to a user login, you should always call them in the same way: <code>user</code>, or <code>login</code>, for instance, but don't change the name in each situation.</li>
+<li>Don't use short names, such as <code>n</code>, or <code>e</code>, because it will be difficult to find your variable among other similar words in the text.</li>
+<li>Try to use readable names. It's better to use a name like <code>birthDate</code> than <code>ddmmyyyy</code>, because you can pronounce this name in a conversation.</li>
+</ul>
+<h3 id="21-uppercase-or-lowercase">2.1. Uppercase or lowercase?<a class="headerlink" href="#21-uppercase-or-lowercase" title="Permanent link">&para;</a></h3>
+<p>The use of uppercase and lowercase letters in names depend on the programming language itself. There are mainly four naming standards:</p>
+<ul>
+<li><strong>Camel Case</strong>: it is used in languages such as Java or Javascript. Every word in the variable name starts with upper case, apart from the first word. For instance:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">personName</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>There is a subset of camel case standard, called <strong>Pascal Case</strong> in which the first word of the name also starts with uppercase. This subset is employed by C# to define public elements (private elements are named using camel case). For instance:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">string</span><span class="w"> </span><span class="n">personName</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PersonAge</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li><strong>Snake Case</strong>: it is used in languages such as PHP or Python. Variable words are separated by underscores:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="x">$person_name = &quot;Nacho&quot;;</span>
+</code></pre></div>
+<ul>
+<li><strong>Kebab Case</strong>: variable words are separated by hyphens. It is not very popular among programming languages, since many of them don't allow the hyphen as part of the variable name (so as not to mix it up with the substraction operator). There are some few examples, such as Lisp or Clojure.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nv">person-name</span><span class="w"> </span><span class="s">&quot;Nacho&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>Upper case</strong>: it is used in many languages to define constants. The words of the name are usually separated by underscores, as in snake case standard:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAXIMUM_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="3-placing-comments">3. Placing comments<a class="headerlink" href="#3-placing-comments" title="Permanent link">&para;</a></h2>
+<p>Well-placed comments help us understand the code around them, whereas misplaced comments can damage the understanding of the code. Some programmers think that comments are failures, and should be avoided as much as possible. One of the reasons argued is that they are hard to maintain. If we change the code after writing a comment, we may forget to update the comment, and thus it would talk about something that is no longer present in the code.</p>
+<p>Another reason to avoid comments is that they are tightly linked to bad code. When we write bad code, we often think that we can write some comments to make it understandable, instead of cleaning the code itself.</p>
+<p>In this section we will learn where to put comments. Firstly, we will see what type of comments are necessary (what we call <em>good comments</em>), and then we will see what comments are avoidable (<em>bad comments</em>).</p>
+<h3 id="31-good-comments">3.1. Good comments<a class="headerlink" href="#31-good-comments" title="Permanent link">&para;</a></h3>
+<p>The following comments are considered necessary:</p>
+<ul>
+<li><strong>Legal comments</strong>, such as copyright or authorship, according to the company standards. This type of comments are normally placed at the beginning of each source file that belongs to the author or company.</li>
+<li><strong>Introduction comments</strong>, a short comment at the beginning of each source file (typically classes) that explains the main purpose of this source file or class. This comment is usually placed along with a legal comment at the beginning of a source file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> This class stores information about a user account</span>
+
+<span class="cm"> Created by Nacho Iborra</span>
+<span class="cm"> */</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Explanation of intent</strong>. These comments are used when:</li>
+<li>We tried to get a better solution to the problem but we could not, and then we explain that a part of the code could be improvable.</li>
+<li>There is a part of the code that does not follow the same pattern than the code around it (for instance, an integer variable among a bunch of floats), and we want to explain why we have used this instruction or data type.</li>
+<li><strong>TODO comments</strong>, which are placed in incomplete parts. They help us remember all the pending tasks. This type of comments have become so popular that a lot of IDEs automatically detect and highlight them.</li>
+<li><strong>API documentation</strong>. Some programming languages, such as Java or C#, let us add some comments in some parts of the code so that these comments are exported to HTML or XML format, and become part of the documentation. </li>
+</ul>
+<h3 id="32-bad-comments">3.2. Bad comments<a class="headerlink" href="#32-bad-comments" title="Permanent link">&para;</a></h3>
+<p>The following are examples of bad comments that we can avoid...</p>
+<p>Some type of <strong>information comments</strong> can be avoided by changing the name of the element that they are explaining. For instance, if we have this comment with this variable:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Total number of customers</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+</code></pre></div>
+<p>We can avoid the comment by renaming the variable this way:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">totalCustomers</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Redundant comments</strong>, i.e. comments that are longer to read than the code they are trying to explain, or they are just unnecessary, because the code is self-explanatory. For instance, the following comment is redundant, since the code it is explaining is quite understandable:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* We ask the user two numbers and add them */</span>
+<span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter two numbers&quot;</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Comments without context</strong>, i.e. comments that are not followed by the corresponding code. For instance, the following comment is not completed with appropriate code. We say we are writing data into a file, but nothing is executed after that. Maybe there was some piece of code, but it was removed.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* We ask the user two numbers and add them */</span>
+<span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter two numbers&quot;</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span><span class="p">);</span>
+<span class="c1">// We print the result in a text file</span>
+</code></pre></div>
+<p>There should be no <strong>mandated comments</strong>. Some people think that every variable, for instance, must have a comment explaining its purpose. But that is not a good decision, since we can avoid most of these comments by using appropriate variable names.</p>
+<p>Also, there should be no <strong>journal comments</strong>: sometimes an edit registry is placed at the beginning of a source file. It contains all the changes made to the code, including the date and the reason of the change. But nowadays, we can use version control applications, such as GitHub, to keep this registry out of the code itself.</p>
+<p>Some time ago, some programmers used to place some <strong>position markers and/or code dividers</strong>,  to quickly find a place in the code, or to separate some code blocks that are quite long. Both types of comments are not recommended if code is properly formatted.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// =================== VARIABLES ====================</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="c1">// =================== MAIN =========================</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="c1">////// FINAL RESULT</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Closing brace comments</strong> are also not recommended. They are placed at every closing brace to explain which element is this brace closing. These comments can be avoided, since most of current IDEs highlight each pair of braces when we click on them, so that we can match each pair automatically. </p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// end main</span>
+</code></pre></div>
+<p><strong>Warnings</strong> are used when we have some code that may cause problems in certain situations, because it needs to be reviewed. It is very usual to find some code blocks completely commented, and a warning message explaining the problem with it. These comments should be turned into "TODO" comments, in order to warn the programmer that this code needs to be reviewed in the future, instead of just removing the comments.</p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
+<p>This program asks the user to introduce three numbers and gets the average of them. Discuss in class which parts of the code are not clean or could be improved, regarding variable names and comments.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AverageNumbers</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Variables to store the three numbers and the average</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">n3</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">Result</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// We ask the user to enter three numbers</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce three numbers:&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">        </span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">        </span><span class="n">n3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// The result is the average of these numbers</span>
+<span class="w">        </span><span class="cm">/* We could have used a float number instead, </span>
+<span class="cm">            but we decided to keep this program as </span>
+<span class="cm">            simple as we could */</span>
+<span class="w">        </span><span class="n">Result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="o">+</span><span class="n">n3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The average is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Result</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="01c.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic data types">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Basic data types
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>This website uses cookies to offer you a better experience. By clicking "Accept," you agree to the use of cookies. You can also set your cookie preferences if you prefer.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

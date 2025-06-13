@@ -1,0 +1,45 @@
+/* Anchura para rejillas (por ejemplo, el panel central de la página */
+.md-grid {
+    max-width: initial;
+}
+
+/* Añadir mensaje de Copyright en el encabezado */
+.md-header__inner {
+    position: relative;
+}
+
+.md-header__copyright {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    background-color: var(--md-default-bg-color);
+    padding: 5px 0;
+    z-index: 10;
+}
+
+/* Características especiales para impresión */
+@media print
+{
+    /* Agregar el copyright al encabezado en la impresión */
+    .md-header__copyright {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        background-color: #fff; /* Fondo blanco para impresión */
+        color: #666;
+        padding: 10px 0;
+        z-index: 100;
+        border: 1px solid #ddd;
+    }
+
+    /* Asegurar que el contenido no se superponga al encabezado */
+    body {
+        margin-top: 50px;
+    }
+}
