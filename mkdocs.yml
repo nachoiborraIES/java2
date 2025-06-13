@@ -24,6 +24,11 @@ nav:
     - Basic data types: 01c.md
     - Basic input and output: 01d.md
     - Writing clean code: 01e.md
+  - Control structures:
+    - Boolean type and operators: 02a.md
+    - Selective structures: 02b.md
+    - Iterative structures: 02c.md
+    - Some additional concepts: 02d.md
 
 
 # Tema CSS
