@@ -29,7 +29,11 @@ nav:
     - Selective structures: 02b.md
     - Iterative structures: 02c.md
     - Some additional concepts: 02d.md
-
+  - Static data types:
+    - Arrays: 03a.md
+    - Enums: 03b.md
+    - Strings: 03c.md
+    - Using regular expressions: 03d.md
 
 # Tema CSS
 theme:
