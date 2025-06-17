@@ -34,6 +34,10 @@ nav:
     - Enums: 03b.md
     - Strings: 03c.md
     - Using regular expressions: 03d.md
+  - Functions and error handling:
+    - Function definition: 04a.md
+    - Useful Java functions: 04b.md
+    - Exception management: 04c.md
 
 # Tema CSS
 theme:
