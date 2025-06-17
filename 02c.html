@@ -767,7 +767,7 @@
 </div>
 
 <p>Iterative structures, also known as <em>loops</em>, can repeat a set of instructions a given number of times, or as long as a condition is true. This way, we avoid writing this set of instructions more than once if we want to repeat it. Now, we are going to see the main iterative structures provided by Java, although we will learn some more in later documents.</p>
-<h3 id="1-the-while-clause">1. The "while" clause<a class="headerlink" href="#1-the-while-clause" title="Permanent link">&para;</a></h3>
+<h2 id="1-the-while-clause">1. The "while" clause<a class="headerlink" href="#1-the-while-clause" title="Permanent link">&para;</a></h2>
 <p>This clause is used to repeat a given set of instructions while a given condition (or set of conditions) is true. For instance, this example counts from 1 to 10:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
@@ -783,7 +783,7 @@
 <span class="w">    </span><span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="2-the-dowhile-clause">2. The "do..while" clause<a class="headerlink" href="#2-the-dowhile-clause" title="Permanent link">&para;</a></h3>
+<h2 id="2-the-dowhile-clause">2. The "do..while" clause<a class="headerlink" href="#2-the-dowhile-clause" title="Permanent link">&para;</a></h2>
 <p>This clause si similar to the previous one, but the condition is evaluated at the end of the loop, instead of the beginning. If we do the same loop than in previous example with a <code>do..while</code> structure, it would look like this.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="k">do</span>
@@ -793,7 +793,7 @@
 <span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
 </code></pre></div>
 <p>We will use this loop when we don't know how many iterations are expected, but we know that there will be (at least) one iteration. It is very usual when we ask the user to type something and then check the input and ask the user again. On the contrary, <em>while</em> loop is better when we don't even know if there will be one iteration.</p>
-<h3 id="3-the-for-clause">3. The "for" clause<a class="headerlink" href="#3-the-for-clause" title="Permanent link">&para;</a></h3>
+<h2 id="3-the-for-clause">3. The "for" clause<a class="headerlink" href="#3-the-for-clause" title="Permanent link">&para;</a></h2>
 <p>We will use this loop when we know how many iterations are expected. It has 3 parts on it:</p>
 <ul>
 <li>The declaration of a counter</li>
@@ -807,18 +807,20 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Note that we can declare variables in <code>for</code> loops (and in the middle of other code, as in other languages such as C#).</p>
-<h4 id="31-another-for">3.1. Another "for"<a class="headerlink" href="#31-another-for" title="Permanent link">&para;</a></h4>
+<h3 id="31-another-for">3.1. Another "for"<a class="headerlink" href="#31-another-for" title="Permanent link">&para;</a></h3>
 <p>There is another way of using the <code>for</code> clause, applied to collections or arrays. It consists in using a variable with the same type, this way:</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
 </code></pre></div>
 <p>where <code>numbers</code> is expected to be a collection or array of integers. This structure is equivalent to the <code>foreach</code> structure of other languages such as C#, and is expected to be used in a read-only way (only to check the values, but not to modify them).</p>
-<blockquote>
-<p><strong>Exercise 1</strong>:</p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
 <p>Create a program called <strong>GroupPeople</strong> that asks the user to enter how many people is going to attend to a conference. The program must create groups of (preferably) 50 people. Whenever this is not possible, then it will attempt to create groups of 10 people, and finally it will create groups of 1 person. The program must output how many groups of each category are necessary. For instance, if 78 people are going to attend to the conference, then we need 1 group of 50 people, 2 groups of 10 people and 8 groups of 1 people.</p>
-<p><strong>Exercise 2</strong>:</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 2</p>
 <p>Create a program called <strong>SumDigits</strong> that asks the user to enter numbers (integer values) until he enters 0. The program must sum up all the numbers entered by the user and then show the final result, and how many digits it has. For instance, if the user types 12, 20, 60, 33, 99 and 0, then the program must output: "<em>The result is 224, and it has 3 digits</em>".</p>
-</blockquote>
+</div>
 
 
 

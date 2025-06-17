@@ -767,7 +767,7 @@
 </div>
 
 <p>In this section we are going to talk about the basics of structured programming using logical information. So, we are going to introduce the boolean data types that lets us check some conditions and decide which piece of code we should run next. This way, we can choose among different results depending on a given input condition, or even repeat the execution of a given piece of code many times without having to re-type it again.</p>
-<h3 id="1-boolean-data-type">1. Boolean data type<a class="headerlink" href="#1-boolean-data-type" title="Permanent link">&para;</a></h3>
+<h2 id="1-boolean-data-type">1. Boolean data type<a class="headerlink" href="#1-boolean-data-type" title="Permanent link">&para;</a></h2>
 <p>Boolean data type is another basic data type (just like integers, characters or floating point numbers) that lets us represent two opposite values: <em>true</em> and <em>false</em>. In Java, this data type is represented by the word <code>boolean</code>. We can declare variables of this type, and also assign an initial value to them (from the range <code>true</code> and <code>false</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 </code></pre></div>
@@ -775,9 +775,9 @@
 <div class="highlight"><pre><span></span><code><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
 <span class="kt">boolean</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
 </code></pre></div>
-<h3 id="2-some-additional-operators">2. Some additional operators<a class="headerlink" href="#2-some-additional-operators" title="Permanent link">&para;</a></h3>
+<h2 id="2-some-additional-operators">2. Some additional operators<a class="headerlink" href="#2-some-additional-operators" title="Permanent link">&para;</a></h2>
 <p>Related with this boolean data type, there are some Java operators that we can use. In this section we are going to talk about relational and logical operators.</p>
-<h4 id="21-relational-operators">2.1. Relational operators<a class="headerlink" href="#21-relational-operators" title="Permanent link">&para;</a></h4>
+<h3 id="21-relational-operators">2.1. Relational operators<a class="headerlink" href="#21-relational-operators" title="Permanent link">&para;</a></h3>
 <p>Relational operators let us compare two different values, and check if one of them is greater, or lower, or equal than the other. This is the complete list of relational operators:</p>
 <table>
 <thead>
@@ -825,7 +825,7 @@
 <span class="kt">boolean</span><span class="w"> </span><span class="n">check2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
 </code></pre></div>
 <p>We'll learn more about how to deal with string values in later sections.</p>
-<h4 id="22-logical-operators">2.2. Logical operators<a class="headerlink" href="#22-logical-operators" title="Permanent link">&para;</a></h4>
+<h3 id="22-logical-operators">2.2. Logical operators<a class="headerlink" href="#22-logical-operators" title="Permanent link">&para;</a></h3>
 <p>Logical operators join two or more simple comparisons to build a complex one. This way we can check if every comparison in the list is true, or at least one of them. The final result of this complex expression is also a boolean value. This is the list of logical operators:</p>
 <table>
 <thead>
@@ -879,16 +879,16 @@
 <li>Regarding AND operator, if the first expression is <em>false</em>, second expression is not checked (final result will be <em>false</em> anyway)</li>
 <li>Regarding OR operator, if the first expression is <em>true</em>, second expression is not checked (final result will be <em>true</em> anyway).</li>
 </ul>
-<blockquote>
-<p><strong>Exercise 1:</strong></p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
 <p>Try to guess the final result of these expressions <code>e1</code>, <code>e2</code> and <code>e3</code>. You can then write a short program to check your answers:</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
 
 <span class="kt">boolean</span><span class="w"> </span><span class="n">e1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
 <span class="kt">boolean</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
 <span class="kt">boolean</span><span class="w"> </span><span class="n">e3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
 </code></pre></div>
+</div>
 
 
 

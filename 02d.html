@@ -783,7 +783,7 @@
 </div>
 
 <p>In this document we are going to learn some additional concepts related with the control structures seen in this unit. We'll see how to work with more complex loop structures, and some additional elements that we can add to these loops. Also, we will learn some basic rules to write clean code regarding these control structures.</p>
-<h3 id="1-nested-loops">1. Nested loops<a class="headerlink" href="#1-nested-loops" title="Permanent link">&para;</a></h3>
+<h2 id="1-nested-loops">1. Nested loops<a class="headerlink" href="#1-nested-loops" title="Permanent link">&para;</a></h2>
 <p>The iterative structures that we have learnt in previous documents can be combined, so that we can place one of them inside another. This complex structure is also called <em>nested loop</em>. It can be a <em>do..while</em> inside a <em>for</em>, or a <em>for</em> inside another <em>for</em>, or any other combination.</p>
 <p>For instance, the following code prints a square filled with asterisks, whose size is determined by variable <em>size</em> (we assume that this variable has been previously declared and assigned):</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
@@ -795,21 +795,21 @@
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Exercise 1</strong>:</p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
 <p>Write a program called <strong>Triangle</strong> in which we ask a user to enter a height (integer) and then we write a reversed triangle like the following one (assuming a height of 5):</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code>*****
  ****
   ***
    **
     *
 </code></pre></div>
-<blockquote>
-<p><strong>Exercise 2</strong>:</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 2</p>
 <p>Create a program called <strong>Counter</strong> that asks the user to write numbers between 1 and 100. The program must keep asking the number until it is a number in the valid range. For each valid number, it must count from this number to 1 in descending order.</p>
-</blockquote>
-<h3 id="2-using-break-and-continue">2. Using "break" and "continue"<a class="headerlink" href="#2-using-break-and-continue" title="Permanent link">&para;</a></h3>
+</div>
+<h2 id="2-using-break-and-continue">2. Using "break" and "continue"<a class="headerlink" href="#2-using-break-and-continue" title="Permanent link">&para;</a></h2>
 <p>There are some special instructions that can be used inside loops to alter its natural behavior. These instructions are <em>break</em> and <em>continue</em>.</p>
 <p>The <strong>break</strong> instruction exits the loop in which it is placed. For instance, this loop only counts from 1 to 5, because the <em>break</em> instruction exits before completing the whole count:</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
@@ -834,10 +834,10 @@
 <span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="3-writing-clean-code-spacing">3. Writing clean code. Spacing.<a class="headerlink" href="#3-writing-clean-code-spacing" title="Permanent link">&para;</a></h3>
-<p>In <a href="01e">01e</a> previous documents we have seen some basic rules to write clean code, but now that we have learnt some additional concepts regarding control structures, our code can get a little bit more complex, and we need to apply some additional rules to keep it tidy.</p>
+<h2 id="3-writing-clean-code-spacing">3. Writing clean code. Spacing.<a class="headerlink" href="#3-writing-clean-code-spacing" title="Permanent link">&para;</a></h2>
+<p>In <a href="01e.html">01e</a> previous documents we have seen some basic rules to write clean code, but now that we have learnt some additional concepts regarding control structures, our code can get a little bit more complex, and we need to apply some additional rules to keep it tidy.</p>
 <p>Appropriate code formatting and spacing tells the reader that the programmer has paid attention to every single detail of the program. However, when we find a bunch of lines of code incorrectly indented and/or spaced, we may think that the same inattention may be present in other aspects of the code.</p>
-<h4 id="31-vertical-spacing">3.1. Vertical spacing<a class="headerlink" href="#31-vertical-spacing" title="Permanent link">&para;</a></h4>
+<h3 id="31-vertical-spacing">3.1. Vertical spacing<a class="headerlink" href="#31-vertical-spacing" title="Permanent link">&para;</a></h3>
 <p>Let's see some simple rules to format and space your code vertically:</p>
 <ul>
 <li>As each group of lines represents a task, these groups should be separated from each other with a blank line. In a Java program, for instance, we would have something like this (pay attention to where blank lines are added):</li>
@@ -894,7 +894,7 @@
 <li>Apply always the same pattern</li>
 <li>Use the same pattern than all the people in your team</li>
 </ul>
-<h4 id="32-horizontal-formatting">3.2. Horizontal formatting<a class="headerlink" href="#32-horizontal-formatting" title="Permanent link">&para;</a></h4>
+<h3 id="32-horizontal-formatting">3.2. Horizontal formatting<a class="headerlink" href="#32-horizontal-formatting" title="Permanent link">&para;</a></h3>
 <p>Regarding horizontal spacing or formatting, there are also some simple rules that we can follow.</p>
 <ul>
 <li>A line of code should be short (maybe 80 or 100 characters length, as much). Some IDEs show a vertical line (typically red) that sets the "ideal" limit for the length of each line. If it is going to be longer, we should cut it and divide the code in multiple lines. You can also apply other rules to determine the maximum line width: you should never have to scroll to the right to see your code, and it should be printable with the same appearance in a vertical page.</li>
