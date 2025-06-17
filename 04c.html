@@ -1,0 +1,1382 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/java2/04c.html">
+      
+      
+        <link rel="prev" href="04b.html">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Exception management - Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exception-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Java" class="md-header__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Java
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exception management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Java" class="md-nav__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Java basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structure of a Java program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables and operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic input and output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01e.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing clean code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Control structures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Control structures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boolean type and operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selective structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iterative structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Some additional concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Static data types
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Static data types
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enums
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using regular expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Functions and error handling
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Functions and error handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function definition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful Java functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Exception management
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="04c.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exception management
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-an-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is an exception?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What is an exception?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-exception-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Exception types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-types-of-exception-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Types of exception management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-catching-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Catching exceptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-throwing-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Throwing exceptions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-an-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is an exception?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What is an exception?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-exception-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Exception types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-types-of-exception-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Types of exception management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-catching-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Catching exceptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-throwing-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Throwing exceptions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="exception-management">Exception management<a class="headerlink" href="#exception-management" title="Permanent link">&para;</a></h1>
+<div style="text-align: right">
+<a target="_blank" href="slides/view.html?fichero=04c"><img src="images/diapositivas.png" width="32" /></a>
+</div>
+
+<p>Along the development of a Java program we can find two types of errors: compilation errors and runtime errors. The first ones are detected by the compiler as we type the code, whereas runtime errors are difficult to predict (in general): network errors, dividing by zero, file not found... Most of these runtime errors can be handled by <strong>exceptions</strong>.</p>
+<h2 id="1-what-is-an-exception">1. What is an exception?<a class="headerlink" href="#1-what-is-an-exception" title="Permanent link">&para;</a></h2>
+<p>An exception is an event that happens during the execution of a program and makes it exit from its normal instruction flow. This way, we can deal with the error in a smart way, by separating the "normal" code from the error itself. Whenever an exception occurs, we say that it has been <strong>thrown</strong>, and we can choose among propagating it (throwing it again) or <strong>catching</strong> it and process the error. We will see these two options in a few minutes.</p>
+<h3 id="11-exception-types">1.1. Exception types<a class="headerlink" href="#11-exception-types" title="Permanent link">&para;</a></h3>
+<p>Runtime errors can be of two main types:</p>
+<ul>
+<li><strong>Errors</strong>: in this case, we talk about <em>fatal</em> errors that happen during the execution of a program, such as hardware errors, memory errors... These errors can't be managed from within a Java application.</li>
+<li><strong>Exceptions</strong>: they are non-critical errors that can be managed (files not found, parsing errors...). Inside this type of errors, we can talk about:<ul>
+<li><strong>Runtime exceptions</strong>: they don't need to be catched, and they are difficult to predict, in general. For instance, assigning null to a variable, or going beyond the boundaries of an array.</li>
+<li><strong>Checked exceptions</strong>: these exceptions need to be catched, or declared to be thrown. In other words, if we use a function that can throw these type of exceptions, the compiler will complain if we don't catch the exception or throw it again. For instance, whenever we call the <code>Thread.sleep</code> instruction, we need to catch or throw an <code>InterruptedException</code>.</li>
+</ul>
+</li>
+</ul>
+<p>However, every type of exception is a subtype of the <code>Exception</code> main type. This generic type stores the error message produced by the exception. There are some other subtypes that store more specific information. For instance, <code>ParseException</code> is a subtype of <code>Exception</code> that is thrown whenever data can't be properly parsed. It stores the error message along with the position where the error was found.</p>
+<h3 id="12-types-of-exception-management">1.2. Types of exception management<a class="headerlink" href="#12-types-of-exception-management" title="Permanent link">&para;</a></h3>
+<p>Whenever an exception is caused in a program, we can decide how to treat it. Basically, we have two options in our code:</p>
+<ul>
+<li><strong>Catch</strong> the exception. This means that exception is "destroyed" and we can show a controlled, customized error message instead.</li>
+<li><strong>Throw</strong> the exception. In this case, we don't want to care about the exception, and we delegate in another piece of code to treat it.</li>
+</ul>
+<p>In next sections of this document we will learn how to manage these two options.</p>
+<h2 id="2-catching-exceptions">2. Catching exceptions<a class="headerlink" href="#2-catching-exceptions" title="Permanent link">&para;</a></h2>
+<p>Whenever a piece of code can throw an exception, we can catch it by using a <code>try..catch</code> block. We put inside the <code>try</code> clause the code of our program that may produce an exception, and we use the <code>catch</code> clause to respond to the specified error. We can just output an error message, or return a given value, among other possible options.</p>
+<p>This example tries to convert a string into an integer value. If the conversion can't be done because the input is not valid, then a <code>NumberFormatException</code> will be thrown, and we can produce an appropriate error message in the <code>catch</code> clause.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="n">string</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// Whatever value</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error parsing text: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>getMessage</code> method gets the error message produced by the exception. See that we are using <code>System.err</code> instead of <code>System.in</code> because we are printing an error, and then we should use the default error output instead of the default "normal" output.</p>
+<p>We can also use <code>printStackTrace</code> method to print a complete stack trace of the error, so that we can see the call stack that have produced the error (this is, methods that have been called until the error was produced).</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="n">string</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// Whatever value</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We can add as many <code>catch</code> clauses as we need, and each one can represent a specific exception type:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Code that may fail</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatException</span><span class="w"> </span><span class="n">e1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Error message for number format</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ArithmeticException</span><span class="w"> </span><span class="n">e2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Error message for dividing by zero</span>
+<span class="p">...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">eN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Error message for any other error</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>However, we must put these <code>catch</code> clauses in order, so that the most generic ones are placed at the end, because the program will enter at the first <code>catch</code> clause that matches the exception produced. In other words, if we put the <code>catch(Exception)</code> clause at the beginning, the rest of clauses will have no effect, since any of them are subtypes of <code>Exception</code> and thus, they will be catched by the first clause.</p>
+<p>There are some instructions that force us to deal with a specific type of exception. For instance, if we call <code>Thread.sleep</code> instruction, the compiler will ask us to deal with an <code>InterruptedException</code>. We can do it this way:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Interruption during sleep: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>However, we can also use a generic <code>Exception</code> element in the <code>catch</code> clause to deal with any type of exception. We only need to specify concrete types of exceptions if we want to manage different <code>catch</code> clauses, and then, produce different error messages depending on the exception produced.</p>
+<h2 id="3-throwing-exceptions">3. Throwing exceptions<a class="headerlink" href="#3-throwing-exceptions" title="Permanent link">&para;</a></h2>
+<p>The second way of managing an exception is throwing it. This way, we pass it to the next function in the stack call... until we reach the <em>main</em> function (in this function we should no longer throw exceptions, we must catch them). </p>
+<p>For instance, this function receives two numbers and returns the division n1 / n2. But if n2 is 0, we can't divide them, so in this case we can throw a new exception to indicate that data is not correct:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">divide</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArithmeticException</span><span class="p">(</span><span class="s">&quot;Can&#39;t divide by zero&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So, if we try to use this method in our program, we must be aware that an exception can be thrown, and catch it:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">anotherFunction</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// ... Ask user to fill number1 and number2</span>
+
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">divide</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="n">number2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ArithmeticException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now, let's have a look at this example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">a</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InterruptedException</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Exception in a&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">b</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">b</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">d</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">c</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">d</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Exception: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This example produces an <code>InterruptedException</code> in function <code>a</code> (we can produce exceptions by throwing new exception elements of any type). Then, as <code>b</code> function calls <code>a</code> function, it is asked to either catch the exception or throw it. By adding the <code>throws</code> clause in the function definition, we explicitly say that this function can throw <code>InterruptedException</code> exceptions. This chain goes on with functions <code>c</code> and <code>d</code>. Finally, main function calls function <code>d</code>, and as this function can throw InterruptedExceptions, we need to catch the possible exception in <em>main</em>.</p>
+<p>All this chain of exception throwing have been originated from <code>a</code> function, since it throws a <em>checked</em> exception that needs to be catched or thrown. If this function had thrown a runtime exception (such as <code>NullPointerException</code>), then none of the <code>throws</code> clauses would have been necessary, since it is a non checked exception. The example would have been like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">a</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NullPointerException</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Null pointer exception in a&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">b</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">b</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">d</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">c</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">d</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>However, if we try to run this last example, a <code>NullPointerException</code> exception will be produced in our console. As this is a non checked exception, we don't need to catch it but, as soon as it is produced, we should, to avoid these huge error messages in the console as we run the program:</p>
+<div class="highlight"><pre><span></span><code>Exception in thread &quot;main&quot; java.lang.NullPointerException: 
+Null pointer exception in a
+    at Pruebas.a(Pruebas.java:6)
+    at Pruebas.b(Pruebas.java:11)
+    at Pruebas.c(Pruebas.java:16)
+    at Pruebas.d(Pruebas.java:21)
+    at Pruebas.main(Pruebas.java:26)
+</code></pre></div>
+<p>We can even throw (or declare to be thrown) as many exception types as we want, separated by commas in the <code>throws</code> clause. Then, we will need to catch all of them sooner or later:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">multipleExceptionsFunction</span><span class="p">()</span>
+<span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">InterruptedException</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(...)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IOException</span><span class="p">(</span><span class="s">&quot;IOException produced&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(...)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InterruptedException</span><span class="p">(</span><span class="s">&quot;Interrupted!!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">anotherFunction</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">multipleExceptionsFunction</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(...);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(...);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
+<p>Create a program called <strong>CalculateDensity</strong> that asks the user to type a weight (in grams) and a volume (in liters). Then, the program must output the density, which is calculated by dividing weight / volume. The program must catch every type of possible exception: <code>NumberFormatException</code> and <code>ArithmeticException</code> whenever they can be thrown. You can only use <code>Scanner.nextLine</code> method to get the user input in this exercise.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 2</p>
+<p>Create a program called <strong>WaitApp</strong> with a function called <em>waitSeconds</em> that will receive a number of seconds (integer) as a parameter. Internally, this function will call <code>Thread.sleep</code> method to pause the program the given number of seconds (this function works with milliseconds, so you must convert seconds to milliseconds when calling it). As the <code>sleep</code> method can throw an <code>InterruptedException</code> element, you will need to deal with it. In this case, you are asked to throw the exception from <em>waitSeconds</em> method, and catch it in the <em>main</em> method, that will call <em>waitSeconds</em> with the number of seconds specified as a <em>main</em> parameter (inside the <code>String[] args</code> parameter). After waiting the specified number of secods, the program will prompt a "Finish" message before exiting.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="04b.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Useful Java functions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Useful Java functions
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>This website uses cookies to offer you a better experience. By clicking "Accept," you agree to the use of cookies. You can also set your cookie preferences if you prefer.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1662 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/java2/04a.html">
+      
+      
+        <link rel="prev" href="03d.html">
+      
+      
+        <link rel="next" href="04b.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Function definition - Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#function-definition" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Java" class="md-header__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Java
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Function definition
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Java" class="md-nav__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Java basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structure of a Java program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables and operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic input and output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01e.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing clean code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Control structures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Control structures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boolean type and operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selective structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iterative structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Some additional concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Static data types
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Static data types
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enums
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using regular expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Functions and error handling
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Functions and error handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Function definition
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="04a.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function definition
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-basic-function-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic function management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Basic function management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-returning-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Returning values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Using parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Using parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-parameters-by-value-or-by-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Parameters by value or by reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-more-on-return-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. More on return types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-global-and-local-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Global and local variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Recursion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Recursion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-main-components-of-a-recursive-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Main components of a recursive function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-some-introductory-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Some introductory examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Some introductory examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-the-factorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1. The factorial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-fibonacci-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2. Fibonacci series
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-using-main-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Using main arguments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful Java functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exception management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-basic-function-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic function management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Basic function management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-returning-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Returning values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Using parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Using parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-parameters-by-value-or-by-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Parameters by value or by reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-more-on-return-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. More on return types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-global-and-local-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Global and local variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Recursion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Recursion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-main-components-of-a-recursive-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Main components of a recursive function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-some-introductory-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Some introductory examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Some introductory examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-the-factorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1. The factorial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-fibonacci-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2. Fibonacci series
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-using-main-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Using main arguments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="function-definition">Function definition<a class="headerlink" href="#function-definition" title="Permanent link">&para;</a></h1>
+<div style="text-align: right">
+<a target="_blank" href="slides/view.html?fichero=04a"><img src="images/diapositivas.png" width="32" /></a>
+</div>
+
+<p>The programs that we have been typing so far are becoming more and more complex. It may be hard to maintain or keep clean a piece of code of some hundred lines and, besides, we may need to repeat the same piece of code in many parts of our program. In order to keep our code clean an reusable, we need to divide it into functions or modules. In this section we'll learn what a function is, how to define functions in Java and how to use them.</p>
+<h2 id="1-basic-function-management">1. Basic function management<a class="headerlink" href="#1-basic-function-management" title="Permanent link">&para;</a></h2>
+<p>Functions let us arrange our code so that we can re-use a piece of code many times without having to duplicate the code. We just assign this piece of code a name (<em>function name</em>) and then we can <em>call</em> this code from other parts of our program. This paradigm is also called <strong>modular programming</strong>, since we define <em>modules</em> or functions to group our code in small subtasks, and call each subtask whenever we need it.</p>
+<p>If we want to use functions within a class, we can declare them as <code>public static</code> if we want to call them from anywhere. We will learn in next units how to declare other types of functions and how to set their visibility, but for now we are going to deal with public, static functions.</p>
+<p>When defining a function, we need to specify the return type (or <code>void</code> if the function does not return anything), the function name and a pair of parentheses. This function prints a welcome message in the screen:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">welcome</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, welcome to this program!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We can call this function from any other function of the same class (including <code>main</code> function) by using the function name and the parentheses:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">welcome</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note that function names always start in lower case in Java (in C#, they start in uppercase if they are public).</p>
+<h3 id="11-returning-values">1.1. Returning values<a class="headerlink" href="#11-returning-values" title="Permanent link">&para;</a></h3>
+<p>Functions can return values. This values can be assigned to variables, or used in other expressions. In order to return a value from a function, its return type must be other than <em>void</em>, and we must use a <code>return</code> clause to specify the value returned. For instance, this function returns a welcome message:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="nf">welcome</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, welcome to this program!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So, if we call this function from the <em>main</em> program, we will not see anything in the screen:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">welcome</span><span class="p">();</span><span class="w">  </span><span class="c1">// Nothing happens</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We need to assign the return value to a variable, or use it in another expression:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Option 1</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">welcome</span><span class="p">();</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Option 2</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">welcome</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="2-using-parameters">2. Using parameters<a class="headerlink" href="#2-using-parameters" title="Permanent link">&para;</a></h2>
+<p>Some functions need some additional data to do their job. These data can be passed to the function as <strong>parameters</strong>, some kind of variables that are specified within the parentheses, including the type of each parameter and its name. For instance:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">myOtherFunction</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then, whenever we need to call this function, we need to specify the values of these parameters, in the same order:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="n">myOtherFunction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="21-parameters-by-value-or-by-reference">2.1. Parameters by value or by reference<a class="headerlink" href="#21-parameters-by-value-or-by-reference" title="Permanent link">&para;</a></h3>
+<p>Passing a parameter <strong>by value</strong> means that we are passing a <em>copy</em> of the original value, so this original value can never be changed from within the function. This is the default situation for simple values, such as integers or floating point numbers:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">myFunction</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// This increment will have no effect after exiting the function</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Inside function: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">myFunction</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="w">         </span><span class="c1">// Inside function: 4</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>However, complex data such as arrays are always passed <strong>by reference</strong>. This means that we are passing a reference or pointer to the original values, and we can change these values from within the function <em>as long as</em> we don't change the whole reference, this is, as long as we don't reassign the whole variable. Let's have a look at this example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">myFunctionWithArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">data</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">           </span><span class="c1">// OK</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">myFunctionWithArray2</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span><span class="w">    </span><span class="c1">// No effect outside the function</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+<span class="w">    </span><span class="n">myFunctionWithArray</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Here numbers = {10, 1, 1, 1}</span>
+<span class="w">    </span><span class="n">myFunctionsWithArray2</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Here numbers = {10, 1, 1, 1}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The same happens with some other complex data, such as objects, as we will see in later units.</p>
+<h3 id="22-more-on-return-types">2.2. More on return types<a class="headerlink" href="#22-more-on-return-types" title="Permanent link">&para;</a></h3>
+<p>Let's have a look at this function. It returns the maximum value of its two input parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maximum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">n2</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>From the point of view of <em>clean code</em>, a function should only have ONE return point, so that it's easy for us to find out where this function ends. In order to meet this requirement, we can rewrite the function this way:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maximum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">n1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="23-global-and-local-variables">2.3. Global and local variables<a class="headerlink" href="#23-global-and-local-variables" title="Permanent link">&para;</a></h3>
+<p>A <strong>global variable</strong> is a variable that has been defined outside of any function (and inside a class), so that it can be shared among all the functions of this class (and possibly other classes). In order for a variable to be global, we should declare it as <em>public</em> and <em>static</em> for now:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">myGlobalVariable</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A <strong>local variable</strong> is a variable that has been defined inside a function, and it does not exist outside this function:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aFunction</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">        </span><span class="n">anotherFunction</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">anotherFunction</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="w"> </span><span class="c1">// Error: number does not exist here</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Global variables are not a good choice, generally, since they can produce side effects. This is, we can accidentally change their values from any function of our program. The most recommended way of dealing with variables is to declare them as local, and pass them to other functions as parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aFunction</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">        </span><span class="n">anotherFunction</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">anotherFunction</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
+<p>Create a program called <strong>Palindrome</strong> with a function called <code>isPalindrome</code>. This function will take a string as a parameter and return a boolean indicating if this string is a palindrome (this is, a string that can be read the same backward as forward, ignoring upper or lower case, and whitespaces). Test this function from the <em>main</em> function with the texts <em>Hannah</em>, <em>Too hot to hoot</em> and <em>Java is the best language</em> (this last text is NOT a palindrome).</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 2</p>
+<p>Create a program called <strong>CountOcurrences</strong> with a function called <code>countString</code>. This function will take two strings <em>a</em> and <em>b</em>, and an integer <em>n</em> as parameters, and it will return a boolean indicating if the string <em>b</em> is contained at least <em>n</em> times in the main string <em>a</em>. Try it from the main function with the main string a = <code>This string is just a sample string</code>, the substring b = <code>string</code> and the number n = 2 (it should return <code>true</code>).</p>
+</div>
+<h2 id="3-recursion">3. Recursion<a class="headerlink" href="#3-recursion" title="Permanent link">&para;</a></h2>
+<p>Recursion is the ability of a function to solve a task by calling itself multiple times with simpler versions of the problem to be solved.</p>
+<h3 id="31-main-components-of-a-recursive-function">3.1. Main components of a recursive function<a class="headerlink" href="#31-main-components-of-a-recursive-function" title="Permanent link">&para;</a></h3>
+<p>In every recursive function we can find two components:</p>
+<ul>
+<li><strong>Base case</strong>: the simplest problem that we can find, in which recursive calls finish. There can be more than one base case in a recursive function, but there must be at least one of them.</li>
+<li><strong>Recursive case</strong>: every internal call to the same function with a simpler version of the problem.</li>
+</ul>
+<p>So, whenever we try to solve a problem recursively, we need to think about the simplest value of this problem, and make the function tend to this simplest value through consecutive calls.</p>
+<h3 id="32-some-introductory-examples">3.2. Some introductory examples<a class="headerlink" href="#32-some-introductory-examples" title="Permanent link">&para;</a></h3>
+<p>Let's get started with recursion by analyzing some simple examples...</p>
+<h4 id="321-the-factorial">3.2.1. The factorial<a class="headerlink" href="#321-the-factorial" title="Permanent link">&para;</a></h4>
+<p><em>Factorial</em> is a mathematical operation that consists in multiplying a number by all its descending sequence up to 1. For instance factorial of number 5 can be calculated as 5 * 4 * 3 * 2 * 1, and it's represented as <em>5!</em>.</p>
+<p>We can see the factorial as a simple multiplication sequence, or as a recursive expression: the factorial of a given number can be decomposed in two parts: the number itself and the factorial of the previous number. So, factorial of number 5 can be seen as 5 multiplied by the factorial of number 4:</p>
+<div class="highlight"><pre><span></span><code>5 * 4 * 3 * 2 * 1 = 5 * 4!
+</code></pre></div>
+<p>Recursively, we can also calculate the factorials of all the subsequent numbers:</p>
+<div class="highlight"><pre><span></span><code>4! = 4 * 3!
+3! = 3 * 2!
+2! = 2 * 1!
+1! = 1
+</code></pre></div>
+<p>As soon as we get to number 1, we've found our base case, the simplest number to calculate the factorial. After this point is reached, we can go back and calculate the rest of pending operations:</p>
+<div class="highlight"><pre><span></span><code>1! = 1
+2! = 2 * 1 = 2
+3! = 3 * 2 = 6
+4! = 4 * 6 = 24
+5! = 5 * 24 = 120
+</code></pre></div>
+<p>We can represent this as a recursive function in Java, this way:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Base case</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Recursive case</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Alternatively, we can also express this operation as an iterative algorithm as well:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">inf</span><span class="w"> </span><span class="nf">factorialIterative</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Recursive functions are an exception to the rule of a single <em>return</em> point. In recursive functions, we usually find a <em>return</em> point for the base case and another <em>return</em> point for the recursive case.</p>
+<h4 id="322-fibonacci-series">3.2.2. Fibonacci series<a class="headerlink" href="#322-fibonacci-series" title="Permanent link">&para;</a></h4>
+<p>Let's see another example. Fibonacci series starts with numbers 0 and 1, and then next number is always generated as the sum of two previous numbers. So, we have this sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21...</p>
+<p>How could we calculate the <em>nth</em> number of the Fibonacci series? We could define a function like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">previous</span><span class="p">,</span><span class="w"> </span><span class="n">previous2</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">previous2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">previous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">previous</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">previous2</span><span class="p">;</span>
+<span class="w">            </span><span class="n">previous2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">previous</span><span class="p">;</span>
+<span class="w">            </span><span class="n">previous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>However, if we represent this function recursively, we can get this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So, in some situations, recursion helps us write a shorter code to solve a problem.</p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 3</p>
+<p>Create a program called <strong>CountDigits</strong> with a function called <code>countDigits</code> that receives a number and, recursively, counts the number of digit that this number has. Try it with number 1252 (4 digits), from the <em>main</em> function.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 4</p>
+<p>Create a program called <strong>PalindromeRecursive</strong> with a function called <code>isPalindrome</code> that receives a string (with only alphabetical letters from a to z in lower case) and recursively determines if this string is palindrome or not, returning a boolean with the result. Try it with the same input values suggested for Exercise 1.</p>
+</div>
+<h2 id="4-using-main-arguments">4. Using <em>main</em> arguments<a class="headerlink" href="#4-using-main-arguments" title="Permanent link">&para;</a></h2>
+<p>As you may have noticed, <em>main</em> function has a String array as parameter:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This means that we can pass as many arguments as we need to this <em>main</em> function from the command line. The first argument will be placed at index 0, the second argument at index 1 and so on.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Received &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; args.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>For instance, if we try to run a program called <em>Main</em> with this command line:</p>
+<div class="highlight"><pre><span></span><code>java Main Nacho 20
+</code></pre></div>
+<p>Then <code>args[0]</code> will be <em>Nacho</em> and <code>args[1]</code> will be 20.</p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 5</p>
+<p>Repeat exercise 3 in another program called <strong>CountDigitsMain</strong> in which the number to be checked will be passed from the command line.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="03d.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using regular expressions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Using regular expressions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="04b.html" class="md-footer__link md-footer__link--next" aria-label="Next: Useful Java functions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Useful Java functions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>This website uses cookies to offer you a better experience. By clicking "Accept," you agree to the use of cookies. You can also set your cookie preferences if you prefer.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
