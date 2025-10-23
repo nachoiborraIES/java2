@@ -1002,9 +1002,26 @@
 <ul>
 <li>First line initializes the <strong>class</strong> in which we are going to place the code. We are creating a class called <em>MyClass</em>.</li>
 <li>Every code inside this <em>class</em> must be enclosed in <strong>curly braces</strong> <code>{</code> ... <code>}</code></li>
-<li>Next, we start another piece of code called <strong>main</strong>, which is the main piece of code that will be launched when we run the program. In Java, this <em>main</em> block must always be <em>public</em>, <em>static</em> and <em>void</em>, and it must have a <em>String[]</em> set of parameters. We'll learn later what all this stuff means. Again, all the code belonging this <em>main</em> block must be enclosed in their corresponding curly braces.</li>
+<li>Next, we start another piece of code called <strong>main</strong>, which is the main piece of code that will be launched when we run the program. In Java, this <em>main</em> block must always be <em>static</em> and <em>void</em>. We'll learn later what all this stuff means. Again, all the code belonging this <em>main</em> block must be enclosed in their corresponding curly braces.</li>
 <li>Finally, inside the curly braces of the <em>main</em> block, we add every instruction that we want to run. In this case, we are adding a <strong>System.out.println</strong> instruction, that is in charge of printing in the screen the text that we specify (<em>Hello</em>, in this case). Also, it's important to finish every instruction with a semicolon <code>;</code>. This tells the compiler that the instruction has finished, and we can start evaluating the next one. We could, this way, write more than one instruction per line, although this way of writing programs is not very usual.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In previous Java versions (until Java 21), the <code>main</code> block had a more different, rigid structure:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>From Java 21 this has changed, and the compiler completes the missing code for use (<em>public</em> element and <em>string[] args</em> parameter). We can even omit the <em>class</em> section and also the <em>static</em> word, but we are not going to do this in this course.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In later examples of this course you may find the "old" version of <em>main</em> module in some examples, but you can replace it with the new one if you want to.</p>
+</div>
 <h2 id="2-more-about-this-example">2. More about this example<a class="headerlink" href="#2-more-about-this-example" title="Permanent link">&para;</a></h2>
 <p>The structure of this program is very similar to the same program written in C#: we always need to define a class, even if we only need a <code>main</code> block. This <code>main</code> block is written in lower case in Java.</p>
 <p>Besides, every public class must have the same name as the source file that contains it, so we need to store the source code of the example above in a file called <code>MyClass.java</code> (Java source files have <code>.java</code> extension). If we want to compile this code, we use <code>javac</code> tool from our JDK installation. We can do it through any IDE, such as Geany, or IntelliJ, as long as we have Java JDK properly installed. </p>
