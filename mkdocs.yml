@@ -38,6 +38,10 @@ nav:
     - Function definition: 04a.md
     - Useful Java functions: 04b.md
     - Exception management: 04c.md
+  - Object oriented programming:
+    - Classes and objects: 05a.md
+    - Class relationships: 05b.md
+    - Projects in IntelliJ: 05c.md
 
 # Tema CSS
 theme:
