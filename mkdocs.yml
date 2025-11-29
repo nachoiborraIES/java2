@@ -43,6 +43,8 @@ nav:
     - Class relationships: 05b.md
     - Projects in IntelliJ: 05c.md
     - Using static and final: 05d.md
+    - Abstract classes and interfaces: 05e.md
+    - Design patterns: 05f.md
 
 # Tema CSS
 theme:
