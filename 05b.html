@@ -1,0 +1,2249 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/java2/05b.html">
+      
+      
+        <link rel="prev" href="05a.html">
+      
+      
+        <link rel="next" href="05c.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Class relationships - Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#class-relatioships" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Java" class="md-header__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Java
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Class relationships
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="orange"  aria-label="Switch to light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Java" class="md-nav__button md-logo" aria-label="Java" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Java
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure of a Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables and operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic data types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic input and output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01e.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writing clean code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control structures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control structures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean type and operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selective structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Iterative structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Some additional concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static data types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Static data types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enums
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03d.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using regular expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions and error handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Functions and error handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Function definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Useful Java functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object oriented programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object oriented programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes and objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class relationships
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="05b.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-class-associations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Class associations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Class associations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-association-navigability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Association navigability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-aggregations-and-compositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Aggregations and compositions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-class-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Class inheritance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Class inheritance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-visibility-and-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Visibility and inheritance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-overriding-parents-behavior-using-super" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Overriding parent's behavior. Using super
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-extending-object-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Extending Object class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-polymorphism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Polymorphism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-exceptions-and-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Exceptions and inheritance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-class-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Class dependency
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects in IntelliJ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-class-associations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Class associations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Class associations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-association-navigability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Association navigability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-aggregations-and-compositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Aggregations and compositions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-class-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Class inheritance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Class inheritance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-visibility-and-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Visibility and inheritance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-overriding-parents-behavior-using-super" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Overriding parent's behavior. Using super
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-extending-object-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Extending Object class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-polymorphism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Polymorphism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-exceptions-and-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Exceptions and inheritance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-class-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Class dependency
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="class-relatioships">Class relatioships<a class="headerlink" href="#class-relatioships" title="Permanent link">&para;</a></h1>
+<div style="text-align: right">
+<a target="_blank" href="slides/view.html?fichero=05b"><img src="images/diapositivas.png" width="32" /></a>
+</div>
+
+<p>Classes are not isolated elements in a program, usually. Objects of a class need to interact with objects of another class in many different ways, and that's how relationship between classes are formalized. In this document we are going to see the main relationships that we can establish between classes: association, inheritance and dependency.</p>
+<h2 id="1-class-associations">1. Class associations<a class="headerlink" href="#1-class-associations" title="Permanent link">&para;</a></h2>
+<p><strong>Association</strong> is a relationship between two classes, in which one of them is part of the elements of the other one, this is, an object of one of the classes is an attribute or instance variable of the other class. It is usually represented in the code with a reference to the contained object or a collection or array of those objects. If we take back our example of a bookshop, we could say that a book has an author. Then, we can define a new class called <code>Author</code> with some attributes, such as the name and year of birth:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Author</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">yearBirth</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Author</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">yearBirth</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">yearBirth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yearBirth</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getYearBirth</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">yearBirth</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setYearBirth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">yearBirth</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">yearBirth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yearBirth</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We can establish a <strong>Has-A</strong> relationship between these two classes (a book <em>has an</em> author), so we define an association between them. To do this, our <code>Book</code> class will have an additional attribute to store the author of this book (we assume that every book has one, and only one, author). We need to add a new parameter to set the author from the constructor, and the corresponding getter and setter for this new attribute.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Book</span><span class="w"> </span>
+<span class="p">{</span><span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numPages</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="n">author</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Book</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numPages</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="n">author</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numPages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numPages</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">author</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">...</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="nf">getAuthor</span><span class="p">()</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">author</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAuthor</span><span class="p">(</span><span class="n">Author</span><span class="w"> </span><span class="n">author</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">author</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Regarding our main program, we can define an <code>Author</code> object and associate it to a given book. Then, we can print the typical information of the book... but also author's information, such as author's name:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BookExample</span><span class="w"> </span>
+<span class="p">{</span><span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Author</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Author</span><span class="p">(</span><span class="s">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1892</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// The lord of the Rings, 850 pages, 13.50 eur, Tolkien</span>
+<span class="w">        </span><span class="n">Book</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Book</span><span class="p">(</span><span class="s">&quot;The lord of the Rings&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">850</span><span class="p">,</span><span class="w"> </span><span class="mf">13.50</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Print book title and author&#39;s name</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="na">getAuthor</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note that, if we want to associate the same author to more than one book, we just need to use <strong>the same object</strong>, instead of creating/repeating the object again for every new book.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Author</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Author</span><span class="p">(</span><span class="s">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1892</span><span class="p">);</span>
+<span class="n">Author</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Author</span><span class="p">(</span><span class="s">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1892</span><span class="p">);</span><span class="w">  </span>
+<span class="c1">// a2 is not the same than a1 (different objects in memory)</span>
+
+<span class="n">Book</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Book</span><span class="p">(</span><span class="s">&quot;The lord of the Rings&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">850</span><span class="p">,</span><span class="w"> </span><span class="mf">13.50</span><span class="p">,</span><span class="w"> </span><span class="n">a1</span><span class="p">);</span>
+<span class="n">Book</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Book</span><span class="p">(</span><span class="s">&quot;The hobbit&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">345</span><span class="p">,</span><span class="w"> </span><span class="mf">8.76</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">);</span><span class="w">  </span><span class="c1">// Different author</span>
+<span class="n">Book</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Book</span><span class="p">(</span><span class="s">&quot;The hobbit&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">345</span><span class="p">,</span><span class="w"> </span><span class="mf">8.76</span><span class="p">,</span><span class="w"> </span><span class="n">a1</span><span class="p">);</span><span class="w">  </span><span class="c1">// Same author</span>
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
+<p>Improve exercise <em>TeamsExample.java</em> from <a href="05a.html">previous document</a> in another source file called <strong>TeamsExample2.java</strong>. Now every team will have an array of 5 players. Add a new class called <code>Player</code> to the source file. For each player, we need to define his/her name, age and back number. Add the corresponding constructor and getters/setters. Then, modify <code>Team</code> class to store 5 <em>Player</em> objects, and adapt your main function to create a team with all the players inside it. Print the information of the team, including the players that belong to it.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 2</p>
+<p>Improve exercise <em>VideoGameList.java</em> from <a href="05a.html">previous document</a> in another source file called <strong>VideoGameList2.java</strong>. Now, every video game has a <em>Company</em> that created it. For every company, we need to store its name and the foundation year. Associate a company to each video game, so that some video games can share the same company object. Then, modify the main application to specify the company information for every videogame (besides video game initial data). Make sure that you share the same <em>Company</em> object among all the video games belonging to the same company.</p>
+</div>
+<h3 id="11-association-navigability">1.1. Association navigability<a class="headerlink" href="#11-association-navigability" title="Permanent link">&para;</a></h3>
+<p>Associations are (or can be) bi-directional. In a class diagram, they are represented by a continuous line joining both clases involved, including the cardinality of each one in the relationship. In our case, a Book has one author, and an author can have many books. This can be represented like this:</p>
+<div align="center">
+    <img src="images/book_author_association.png" />
+</div>
+
+<p>However, if we don't specify it, associations are (by default) bi-directional. This means that we can retrieve the author of a book from the book object (we can do this, already), but we can also retrieve the list of books of an author from the author object. This last part of the relationship is not implemented in our example, so, unless we want to implement it, we need to represent this association as unidirectional, by adding an arrow pointing to <code>Author</code> class. This means that we can get the author from a book object, but not the opposite. The arrow can be placed at either the line or the association name.</p>
+<div align="center">
+    <img src="images/book_author_association_uni.png" />
+</div>
+
+<p>The programmer can decide if an association needs to be bi-directional or not, so only one of the classes (or both) will be related with the other one.</p>
+<p>Let's have a look at this example: we have a <code>House</code> class to represent houses. From each class, we want to know the address, and the total number of rooms. Each house has a living room, so we use a <code>LivingRoom</code> class to represent it. We store the total area of the living room. We can establish a one-to-one relationship between these classes (a house has one living room, and a living room belongs to one house):</p>
+<div align="center">
+    <img src="images/one_one_association.png" />
+</div>
+
+<p>Now, we are going to represent this bi-directional relationship in Java. First of all, we add a <code>LivingRoom</code> object as attribute in <code>House</code> class, and we assign it in the constructor:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">House</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rooms</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">LivingRoom</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">House</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rooms</span><span class="p">,</span><span class="w"> </span><span class="n">LivingRoom</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">rooms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rooms</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">livingRoom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getAddress</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAddress</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">address</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRooms</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">rooms</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setRooms</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">rooms</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">rooms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rooms</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">LivingRoom</span><span class="w"> </span><span class="nf">getLivingRoom</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setLivingRoom</span><span class="p">(</span><span class="n">LivingRoom</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">livingRoom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Next, we try to do the same with <code>LivingRoom</code> class (we add a <code>House</code> object and try to assign it in the constructor):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">LivingRoom</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">House</span><span class="w"> </span><span class="n">house</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LivingRoom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="n">House</span><span class="w"> </span><span class="n">house</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">house</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">house</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setArea</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">area</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">House</span><span class="w"> </span><span class="nf">getHouse</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">house</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setHouse</span><span class="p">(</span><span class="n">House</span><span class="w"> </span><span class="n">house</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">house</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">house</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>But let's try to create both objects from a <em>main</em> program:</p>
+<div class="highlight"><pre><span></span><code><span class="n">LivingRoom</span><span class="w"> </span><span class="n">lr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LivingRoom</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="o">???</span><span class="p">);</span><span class="w">    </span><span class="c1">// Where&#39;s the house??</span>
+<span class="n">House</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">House</span><span class="p">(</span><span class="s">&quot;Java Street&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">);</span><span class="w">  </span><span class="c1">// LivingRoom is OK</span>
+</code></pre></div>
+<p>As you can see, one of the constructors is missing some information. When we want to establish a bi-directional association between two classes, one of them can be set in the constructor, but the other one (the first object that we create) must wait. So the constructor of <code>LivingRoom</code> class does not need a <code>House</code> parameter:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">LivingRoom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">area</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// House remains unassigned</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then, we have two options to assign the house to a living room:</p>
+<ul>
+<li>We call the setter from <code>LivingRoom</code> once the house has been created:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">LivingRoom</span><span class="w"> </span><span class="n">lr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LivingRoom</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">House</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">House</span><span class="p">(</span><span class="s">&quot;Java Street&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">);</span>
+<span class="n">lr</span><span class="p">.</span><span class="na">setHouse</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>We can do this automatically in the house constructor, as soon as we assign the living room to it:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">House</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rooms</span><span class="p">,</span><span class="w"> </span><span class="n">LivingRoom</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">rooms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rooms</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">livingRoom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">livingRoom</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Assign the livingRoom to this house</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">livingRoom</span><span class="p">.</span><span class="na">setHouse</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If we use this last way, we don't need any additional outer code. As soon as we instantiate both objects, they are automatically associated:</p>
+<div class="highlight"><pre><span></span><code><span class="n">LivingRoom</span><span class="w"> </span><span class="n">lr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LivingRoom</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">House</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">House</span><span class="p">(</span><span class="s">&quot;Java Street&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">lr</span><span class="p">);</span>
+<span class="c1">// At this point, association is already bi-directional</span>
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 3</p>
+<p>Create a source file called <strong>BookAssociation.java</strong>. Add the <code>Book</code> and <code>Author</code> class that we have already implemented in previous example, and try to make this association bi-directional. In this case, you need to add a <code>Book</code> array as an attribute in <code>Author</code> class, and add the corresponding code to add books to each author's array.</p>
+</div>
+<h3 id="12-aggregations-and-compositions">1.2. Aggregations and compositions<a class="headerlink" href="#12-aggregations-and-compositions" title="Permanent link">&para;</a></h3>
+<p>There are two special types of associations: compositions and aggregations. In both, one of the classes is considered as a whole thing, and the other one is a part of this whole thing. But... how to distinguish between composition and aggregation? Let's see it with some simple examples:</p>
+<ul>
+<li><strong>Composition</strong>: we use it when an object is an indivisible part of another object. For example, a <code>Room</code> is part of a <code>House</code> (and only of that house), a <code>Square</code> is part of a <code>Chessboard</code>, and so on. The main characteristic of this type of relationship is that when we destroy the main object (the <em>whole thing</em>), all objects that are part of it are also destroyed.</li>
+<li><strong>Aggregation</strong>: we use it when an object is part of another object (or maybe part of two or more objects) and it can exist without the object that contains it. An example of this would be a <code>Player</code>, who is part of a <code>Team</code> (or maybe more), or a <code>Student</code>, who belongs to a <code>Classrom</code> (or more). In these cases when the <code>Team</code> or the <code>Classroom</code> no longer exists, players and students continue to exist, and they can join other team/classroom.</li>
+</ul>
+<p><strong>Composition and aggregation in practice</strong></p>
+<p>In practice, the way we define the aggregation or composition depends on the programming language that we are using. But, in general, if the internal attribute or instance variable that makes the composition or aggregation can't be accessed from out of the containing class, then we have a composition. Otherwise, we have an aggregation. Let's see this with the following example: we define a <code>Car</code> class that has an object of type <code>Engine</code>. If we want to define a composition between these classes, we would do it this way:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Engine</span><span class="w"> </span><span class="n">engine</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">(</span><span class="n">EngineParams</span><span class="w"> </span><span class="n">params</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Engine</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note that we create the <code>Engine</code> object inside the <code>Car</code> class, by using some parameters specified in the <code>EngineParams</code> object. This object may contain some simple data about the engine, such as power, or fuel consumption. In this case, if the <code>Car</code> object is destroyed, then the <code>Engine</code> object will be destroyed as well. There's no way to access the engine beyond this class. So, this is a composition.</p>
+<p>However, if we need to define an aggregation between <code>Car</code> class and <code>Engine</code> class, then we do it like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Engine</span><span class="w"> </span><span class="n">engine</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">(</span><span class="n">Engine</span><span class="w"> </span><span class="n">engine</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">engine</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Engine</span><span class="w"> </span><span class="nf">getEngine</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">engine</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In this case, we are using an external object of type <code>Engine</code> to create the internal <code>Engine</code> object of the car (we pass this external object as a parameter to the constructor), so the engine can exist without the car: if we destroy the car, the external engine that we used in the constructor will keep on existing. This can be useful if we want to use the engine in another car, once the old one is destroyed.</p>
+<p>Note that aggregations and simple associations are implemented in the same way in Java programs. Compositions are more tricky and, unless we have a good reason to implement them, they can also act as aggregations.</p>
+<h2 id="2-class-inheritance">2. Class inheritance<a class="headerlink" href="#2-class-inheritance" title="Permanent link">&para;</a></h2>
+<p>We use <strong>inheritance</strong> when we want to create a new class that takes all the features of another one, adding its particular ones. For instance, if we have an <code>Animal</code> class with a set of attributes (name, weight...) and methods, we can inherit from it to create a new class called <code>Dog</code> that will also have all these features, and we can add some additional ones, such as a <code>bark()</code> method.</p>
+<p>We have seen in previous sections of this document how to identify an association, by finding a <em>Has-A</em> relationship between the classes involved. When talking about inheritance, we identify it with an <strong>Is-A</strong> relationship, so that one class is a subtype of another class. In other words, it shares the features of the ancestor and introduces some new ones. One example of this is a <code>Car</code>, which is a subtype of <code>Vehicle</code>. Another could be a <code>ComputerClassroom</code>, which is a subtype of <code>Classroom</code> that also has computers in it. </p>
+<p>When we want a class to inherit the features from another class in Java we use the reserved word <code>extends</code> in the new class (also called child class or <em>subclass</em>), referring to the class from which we want to extend (also called parent class or <em>superclass</em>). </p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Let's go back to our bookshop example. What if we want to add information for a specific type of book, such as comics? We can add, for instance, if they are in color or not (grayscale), and also the volume number for a comic series. We could create a brand new class with all the information, like this one:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Comic</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numPages</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Constructors, getters, setters and so on...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>But, as a comic <em>is a</em> subtype of book, we can inherit from <code>Book</code> class and automatically include all the elements of this class (this is, the title, number of pages, price, getters, setters...). Then, we only need to care about the new, specific information for comic elements:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Comic</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Book</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Comic</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numPages</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numPages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numPages</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">volumeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">getColor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setColor</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">color</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getVolumeNumber</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setVolumeNumber</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">volumeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="21-visibility-and-inheritance">2.1. Visibility and inheritance<a class="headerlink" href="#21-visibility-and-inheritance" title="Permanent link">&para;</a></h3>
+<p>Note that, in the constructor, we need to specify EVERY attribute for the object that we are creating. As comic extends book functionality, we need to provide the title, number of pages and price, along with the color and volume number. However, there's a problem if we try to compile and run previous code: title, number of pages and price are <em>private</em> members of <code>Book</code> class, so they can't be accessed from outer classes. We should not declare them public, since it's not recommended. Fortunately, there's an additional, intermediate access level that we can use, which is <strong>protected</strong>.</p>
+<p>We use the <code>protected</code> access modifier to let child classes access parent information. It's generally used in attributes of a parent class, such as our <code>Book</code> class. We change the visibility this way:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Book</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numPages</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// The rest of code does not change</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So, to sum up, now that we have learnt what inheritance means, there are four different visibility levels in Java. Here you can see them from higher to lower:</p>
+<ul>
+<li><strong>public</strong> elements can be accessed from any other part of the code (including other classes and packages)</li>
+<li><strong>protected</strong> elements can only be accessed from any subclass of current class, or any class from the same package than current class</li>
+<li><em>package</em> (default): elements are only accessible from the same package.</li>
+<li><strong>private</strong> elements can only be accessed from current class</li>
+</ul>
+<p>Let's see all these modifiers in an example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Accessible everywhere</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Accessible from subclasses or same package</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Only accessible from this class</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">average</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Package level, accessible from same package</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">symbol</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="22-overriding-parents-behavior-using-super">2.2. Overriding parent's behavior. Using <em>super</em><a class="headerlink" href="#22-overriding-parents-behavior-using-super" title="Permanent link">&para;</a></h3>
+<p>When we define a class that is a subtype of another class using inheritance, we can modify or <strong>override</strong> the behavior of parent methods in child class. For instance, <code>printInformation</code> method in <code>Book</code> class just prints the basic information (title, pages and price):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printInformation</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Book information:&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Title: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">title</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pages: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numPages</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Price: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>But, in this new class, we need to add specific information about the comic. So we can write again this method in <code>Comic</code> class, and add an annotation called <code>@Override</code> to specify that this method belongs to parent class, but we are changing its behavior in child class:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Comic</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Book</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printInformation</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Book information:&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Title: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">title</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pages: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numPages</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Price: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Color/Grayscale: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">            </span><span class="p">(</span><span class="n">color</span><span class="o">?</span><span class="s">&quot;Color&quot;</span><span class="p">:</span><span class="s">&quot;Grayscale&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Volume: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Moreover, we can make use of a specific reserved word called <code>super</code> to get to a parent's element. In this case, we are repeating the same code of parent's <code>printInformation</code> method, so we can just call this parent's method using <code>super</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Comic</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Book</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printInformation</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">printInformation</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Color/Grayscale: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">            </span><span class="p">(</span><span class="n">color</span><span class="o">?</span><span class="s">&quot;Color&quot;</span><span class="p">:</span><span class="s">&quot;Grayscale&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Volume: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>@Override</code> annotation is NOT compulsory for the program to compile, but you should use it in terms of code cleanliness, since you are specifying that this method does not belong to current class, it's just another version of an existing method in parent class.</p>
+</div>
+<p><strong>Constructors and inheritance</strong></p>
+<p>Let's take a look again at <code>Comic</code> constructor in previous example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">Comic</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numPages</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">numPages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numPages</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">volumeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Whenever we call a constructor from a subclass, the default constructor (i.e. the one with no parameters) of the superclass is automatically called (unless we use <code>super</code> to choose another constructor). So the code above will work as long as <code>Book</code> has a default constructor. Otherwise, we should:</p>
+<ul>
+<li>Define a default (even empty) constructor in <code>Book</code> class</li>
+<li>Choose with <code>super</code> another different parent constructor from <code>Comic</code> class. In this case, we can make use of the parameterized constructor of <code>Book</code> class and avoid assigning book's attributes from child class:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">Comic</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numPages</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">numPages</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">volumeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">volumeNumber</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>NOTE</strong>: if you use <code>super</code> instruction in a child constructor to invoke a specific constructor from parent class, this instruction MUST be the first in child constructor.</p>
+</blockquote>
+<h3 id="23-extending-object-class">2.3. Extending <em>Object</em> class<a class="headerlink" href="#23-extending-object-class" title="Permanent link">&para;</a></h3>
+<p>We must take into account that, unless we specify another inheritance, every class in Java inherits from a global, parent class called <code>Object</code>. So, if our class does not inherit from any other class, it will automatically be a child of <code>Object</code> class, and thus, it can use or override methods from this class, such as <code>equals</code> or <code>toString</code>.</p>
+<p>If we override <code>toString</code> method, we can then convert our objects to strings, and then print them easily. Let's suppose that we override this method in a <code>Person</code> class, so that we return a string with the person's name and age between parentheses:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; years)&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then, we can easily print any <code>Person</code> object by simply calling <code>System.out.println</code> sentence:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Person</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Nacho&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints &quot;Nacho (40 years)&quot;</span>
+</code></pre></div>
+<p>In the same way, we can also override <code>equals</code> method to determine if two <code>Person</code> objects are equal or not. In this example, we say that they are equal if they have the same name and age:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; (&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; years)&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then, we can compare two <code>Person</code> objects and determine if they are equal or not:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Person</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Nacho&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
+<span class="n">Person</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Nacho&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">39</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">p2</span><span class="p">))</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;They are equal!&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;They are different&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="24-polymorphism">2.4. Polymorphism<a class="headerlink" href="#24-polymorphism" title="Permanent link">&para;</a></h3>
+<p>The term <strong>polymorphism</strong> refers to the ability of an element to have multiple shapes or appearances. For instance, a class can have many methods with the same name and different number or types of parameters. This is a kind of polymorphism which is also called <em>method overload</em>. We can call any of these method versions depending on our needs.</p>
+<p>Regarding object oriented programming, <strong>polymorphism</strong> is the ability of an object to behave like another object. This term is commonly used in inheritance to show that an object of any class can behave like any of its subclasses. For instance, a <code>Vehicle</code> object of previous examples could behave like a <code>Car</code> object, so we can, for instance:</p>
+<ul>
+<li>Instantiate a <code>Car</code> object from a <code>Vehicle</code> variable:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="w"> </span><span class="n">myCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(...);</span>
+</code></pre></div>
+<ul>
+<li>Use a <code>Car</code> object as a parameter to a method which gets a <code>Vehicle</code> object.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aMethod</span><span class="p">(</span><span class="n">Vehicle</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+<span class="n">Car</span><span class="w"> </span><span class="n">anotherCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(...);</span>
+<span class="n">aMethod</span><span class="p">(</span><span class="n">anotherCar</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Fill an array of <code>Vehicle</code> objects with any subtype of <code>Vehicle</code> in each position:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="o">[]</span><span class="w"> </span><span class="n">vehicles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vehicle</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+
+<span class="n">vehicles</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vehicle</span><span class="p">(...);</span>
+<span class="n">vehicles</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(...);</span>
+<span class="n">vehicles</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Van</span><span class="p">(...);</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>However, we must take into account that, when using polymorphism, the polymorphic variable can only access the methods of the type to which it belongs. In other words, if we create a <code>Car</code> object and store it in a <code>Vehicle</code> variable, then we will only be able to call methods or public elements from <code>Vehicle</code> class (not from <code>Car</code> class).</p>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="w"> </span><span class="n">myCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(...);</span>
+<span class="n">myCar</span><span class="p">.</span><span class="na">vehicleData</span><span class="p">();</span><span class="w">                          </span><span class="c1">// OK</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myCar</span><span class="p">.</span><span class="na">getNumberOfDoors</span><span class="p">());</span><span class="w"> </span><span class="c1">// ERROR</span>
+</code></pre></div>
+<p>If we want to detect the concrete type of an object in order to access its own methods (and not only those inherited from parent class), then we can use <code>instanceof</code> operator, and then make a typecast to the concrete type:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="o">[]</span><span class="w"> </span><span class="n">vehicles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vehicle</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+<span class="p">...</span><span class="w"> </span><span class="c1">// Fill the array with many vehicle types</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vehicles</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vehicles</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Car</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(((</span><span class="n">Car</span><span class="p">)</span><span class="n">vehicles</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">).</span><span class="na">getNumberOfDoors</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vehicles</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Van</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 4</p>
+<p>Improve previous exercise <em>TeamsExample2.java</em> in another source file called <strong>TeamsExample3.java</strong>. Add a new class called <code>Captain</code> which inherits from <code>Player</code> class. It will have an additional attribute specifying the years of experience of the captain. Define the corresponding constructor (using <code>super</code> to fill parent's data) and modify the main function to include a <em>Captain</em> object in the team.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 5</p>
+<p>Improve previous exercise <em>VideoGameList2.java</em> in another source file called <strong>VideoGameList3.java</strong>. Add a new class called <code>PCVideoGame</code> which inherits from <code>VideoGame</code> class. It will have two new attributes called <em>minimumRAM</em> and <em>minimumHD</em> to store the minimum amount of RAM memory and hard disk space required to play the game (both integers). Define the corresponding constructor to set these values (and use <code>super</code> to call parent's constructor to set the inherited values). Then, add some PC video games to the array and repeat the same steps than in previous exercise.</p>
+<p>Also override <code>toString</code> method in <em>VideoGame</em> class so that we can print a video game in the screen with its information by symply calling <code>System.out.println</code>.</p>
+</div>
+<h3 id="25-exceptions-and-inheritance">2.5. Exceptions and inheritance<a class="headerlink" href="#25-exceptions-and-inheritance" title="Permanent link">&para;</a></h3>
+<p>We can create our own exceptions by creating classes that inherit from <code>Exception</code> class. We can then throw a custom exception whenever we want and manage it in the method that throws it or send it up to the method it will return to.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CustomException</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CustomException</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Store</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">welcome</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">CustomException</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomException</span><span class="p">(</span><span class="s">&quot;Error, nobody can pass!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Store</span><span class="w"> </span><span class="n">store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Store</span><span class="p">();</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// This method can throw a CustomException</span>
+<span class="w">        </span><span class="n">store</span><span class="p">.</span><span class="na">welcome</span><span class="p">();</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">CustomException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 6</p>
+<p>Create a new source file called <strong>CustomException.java</strong>. In this source file you're going to implement:</p>
+<ul>
+<li>A class called <code>NegativeSubtractException</code>. This class will inherit from <code>Exception</code> and will be created when a subtraction result is negative. The constructor will receive 2 parameters (the two numbers that caused a negative subtraction result in order). The message generated will be: "<em>NegativeSubstractException: 'N1 - N2' result is negative</em>".</li>
+<li>In the main class create a static function that throws this type of custom exception. This method will be called <code>static int positiveSubtract(int n1, int n2)</code>, and will generate and throw this kind of exception if the result is negative. Within the main method call this method with parameters that would give a negative result and catch the corresponding exception, showing its message on console.</li>
+</ul>
+</div>
+<h2 id="3-class-dependency">3. Class dependency<a class="headerlink" href="#3-class-dependency" title="Permanent link">&para;</a></h2>
+<p>Dependency relationship establishes a connection between two classes when one of them uses an object of the other one in some part of its code, BUT there's no association between them (this is, there's no attribute of one class in the other class).</p>
+<div align="center">
+    <img src="https://nachoiborraies.github.io/sw/images/class_diagrams_dependency_examples.png">
+</div>
+
+<p>If we take a look at this example, there's a dependency between <code>Application</code> and <code>Window</code> class. This can be due to a method in <code>Application</code> class that receives a <code>Window</code> parameter, for instance. But there's no <code>Window</code> attribute in <code>Application</code> class:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Application</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aMethod</span><span class="p">(</span><span class="n">Window</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Also, there could be a piece of code inside a method that instantiates a Window object. In this case, there would also be a dependency relationship between these classes:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Application</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aMethod</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Window</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Window</span><span class="p">(...);</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="05a.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Classes and objects">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Classes and objects
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="05c.html" class="md-footer__link md-footer__link--next" aria-label="Next: Projects in IntelliJ">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Projects in IntelliJ
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>This website uses cookies to offer you a better experience. By clicking "Accept," you agree to the use of cookies. You can also set your cookie preferences if you prefer.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
