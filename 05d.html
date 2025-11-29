@@ -11,6 +11,8 @@
         <link rel="canonical" href="https://nahoiborraies.github.io/java2/05d.html">
       
       
+        <link rel="prev" href="05c.html">
+      
       
       
         
@@ -21,7 +23,7 @@
     
     
       
-        <title>Object oriented programming - Java</title>
+        <title>Using static and final - Java</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#object-oriented-programming" class="md-skip">
+        <a href="#using-static-and-final" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Object oriented programming
+              Using static and final
             
           </span>
         </div>
@@ -988,8 +990,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -999,15 +1003,17 @@
       
         
       
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1028,7 +1034,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1123,6 +1129,120 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using static and final
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="05d.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using static and final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-static-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Static elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Static elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-instance-elements-vs-class-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Instance elements vs class elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-final-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Final elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1157,18 +1277,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-static-and-final" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using static and final
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using static and final">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#1-static-elements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1195,8 +1303,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#2-final-elements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1204,11 +1312,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1229,14 +1332,13 @@
 
 
 
-<h1 id="object-oriented-programming">Object oriented programming<a class="headerlink" href="#object-oriented-programming" title="Permanent link">&para;</a></h1>
-<h2 id="using-static-and-final">Using <em>static</em> and <em>final</em><a class="headerlink" href="#using-static-and-final" title="Permanent link">&para;</a></h2>
+<h1 id="using-static-and-final">Using <em>static</em> and <em>final</em><a class="headerlink" href="#using-static-and-final" title="Permanent link">&para;</a></h1>
 <div style="text-align: right">
 <a target="_blank" href="slides/view.html?fichero=05d"><img src="images/diapositivas.png" width="32" /></a>
 </div>
 
 <p>Along previous sections, we've been using <em>static</em> and <em>final</em> words in some parts of our code. It's now time to explain what they exactly mean.</p>
-<h3 id="1-static-elements">1. Static elements<a class="headerlink" href="#1-static-elements" title="Permanent link">&para;</a></h3>
+<h2 id="1-static-elements">1. Static elements<a class="headerlink" href="#1-static-elements" title="Permanent link">&para;</a></h2>
 <p><strong>static</strong> modifier defines elements that belong to the class itself, and not to any specific object of the class. For instance, if we define a static attribute:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyClass</span><span class="w"> </span>
 <span class="p">{</span>
@@ -1290,10 +1392,10 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>You can use many other static methods existing in Java. For instance, <code>Math</code> class has a lot of them, such as <code>Math.pow(...)</code>, or <code>Math.sqrt(...)</code>.</p>
-<h4 id="11-instance-elements-vs-class-elements">1.1. Instance elements vs class elements<a class="headerlink" href="#11-instance-elements-vs-class-elements" title="Permanent link">&para;</a></h4>
+<h3 id="11-instance-elements-vs-class-elements">1.1. Instance elements vs class elements<a class="headerlink" href="#11-instance-elements-vs-class-elements" title="Permanent link">&para;</a></h3>
 <p>At the beginning of this unit we've talked about <em>instance variables</em> referring to attributes. We can talk about <em>instance elements</em> to refer to any element in a class (either an attribute or a method) that belongs to a given object, this is, we need to instantiate an object to use or access this element.</p>
 <p>On the other hand, we have <em>class elements</em> (either class attributes or methods), this is, elements that don't belong to a particular object, so we don't need to instantiate any object to use them. This is what we get when we use <em>static</em> in our classes.</p>
-<h3 id="2-final-elements">2. Final elements<a class="headerlink" href="#2-final-elements" title="Permanent link">&para;</a></h3>
+<h2 id="2-final-elements">2. Final elements<a class="headerlink" href="#2-final-elements" title="Permanent link">&para;</a></h2>
 <p><strong>final</strong> modifier lets us define elements that can't be modified. If we apply this modifier to an attribute or variable, we are defining a constant: the element can't be re-assigned to any other value:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 
@@ -1331,6 +1433,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="05c.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Projects in IntelliJ">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Projects in IntelliJ
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
