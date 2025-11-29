@@ -21,7 +21,7 @@
     
     
       
-        <title>Object oriented programming - Java</title>
+        <title>Refactoring and software patterns - Java</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#object-oriented-programming" class="md-skip">
+        <a href="#refactoring-and-software-patterns" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Object oriented programming
+              Refactoring and software patterns
             
           </span>
         </div>
@@ -1187,18 +1187,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#refactoring-and-software-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Refactoring and software patterns
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Refactoring and software patterns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#1-code-refactoring" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1247,8 +1235,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#2-design-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1297,11 +1285,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -1320,16 +1303,15 @@
 
 
 
-<h1 id="object-oriented-programming">Object oriented programming<a class="headerlink" href="#object-oriented-programming" title="Permanent link">&para;</a></h1>
-<h2 id="refactoring-and-software-patterns">Refactoring and software patterns<a class="headerlink" href="#refactoring-and-software-patterns" title="Permanent link">&para;</a></h2>
+<h1 id="refactoring-and-software-patterns">Refactoring and software patterns<a class="headerlink" href="#refactoring-and-software-patterns" title="Permanent link">&para;</a></h1>
 <div style="text-align: right">
 <a target="_blank" href="slides/view.html?fichero=05f"><img src="images/diapositivas.png" width="32" /></a>
 </div>
 
-<h3 id="1-code-refactoring">1. Code refactoring<a class="headerlink" href="#1-code-refactoring" title="Permanent link">&para;</a></h3>
+<h2 id="1-code-refactoring">1. Code refactoring<a class="headerlink" href="#1-code-refactoring" title="Permanent link">&para;</a></h2>
 <p>In software engineering, <em>refactoring</em> often refers to a code update that does not affect its behavior, which is also known as <em>cleaning the code</em>. Refactoring is used as part of the software development process: developers sometimes add new functionalities and test cases, and sometimes refactor their code to make it clearer and more robust. In this case, running the tests again may prove that refactoring has not changed the behavior of the application.</p>
 <p>So refactoring is a part of software maintenance that does not fix any bug nor add any new feature. The main target is to improve code comprehension or change its structure to ease its future maintenance. Sometimes it is difficult to add new functionalities to a program with its current code structure, so a developer can refactor it before adding more new code.</p>
-<h4 id="11-why-to-refactor">1.1. Why to refactor?<a class="headerlink" href="#11-why-to-refactor" title="Permanent link">&para;</a></h4>
+<h3 id="11-why-to-refactor">1.1. Why to refactor?<a class="headerlink" href="#11-why-to-refactor" title="Permanent link">&para;</a></h3>
 <p>There are many reasons why we should use this technique:</p>
 <ul>
 <li><strong>Quality.</strong> It is the main reason. Refactoring is a continuous thinking over our code in an environment where we don't have too much time to look back. Good code is simple and well structured, and anyone can read it and understand it without being part of the development team. We should not come back to those programs written in a single line, where conciseness was better than readability.</li>
@@ -1337,7 +1319,7 @@
 <li><strong>Evolutive Design.</strong> Instead of an initial Big Design, sometimes the requirements are not clearly specified at the beginning, so we must face the design gradually. New functionalities can be added as we are implementing the project, so the initial design can become useless. Refactoring lets us make the design evolve as new functionalities join the old ones. This often implies important changes in the architecture of the project.</li>
 <li><strong>Avoid rewriting code.</strong> In most cases, refactoring is better than rewriting. It is not easy to face a code that is not ours, and does not follow our own standards, but this is not a good reason to start from scratch. Especially in an environment where cost savings make it impossible. Anyway, updating our code is not always necessary. There must be a good reason, and we only need to make an update if there is a bad design that difficults future developments. Whenever we notice that our code is difficult to understand, or there is duplicated code, then we need to refactor it. Sometimes we may need to step back and rethink some aspects, so that we can move on quickly and easily.</li>
 </ul>
-<h4 id="12-when-to-refactor">1.2. When to refactor?<a class="headerlink" href="#12-when-to-refactor" title="Permanent link">&para;</a></h4>
+<h3 id="12-when-to-refactor">1.2. When to refactor?<a class="headerlink" href="#12-when-to-refactor" title="Permanent link">&para;</a></h3>
 <p>Refactoring code is not due to aesthetic reason. We must pay attention to some situations in which it is better to stop and rearrange our code. The elements that warn us that our code is in trouble are known as <em>Bad Smells</em>. An experienced programmer can determine that his/her program is starting to "stink" when there are:</p>
 <ul>
 <li><strong>Ambiguous identifiers</strong>. They can be either variable, class or method names. We will need to rename them to clarify our code. For instance, we can rename a variable called <code>t</code> with another one called <code>waitTime</code>.</li>
@@ -1485,7 +1467,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4 id="13-refactoring-in-intellij">1.3. Refactoring in IntelliJ<a class="headerlink" href="#13-refactoring-in-intellij" title="Permanent link">&para;</a></h4>
+<h3 id="13-refactoring-in-intellij">1.3. Refactoring in IntelliJ<a class="headerlink" href="#13-refactoring-in-intellij" title="Permanent link">&para;</a></h3>
 <p>In <strong>IntelliJ</strong>, we can find a <em>Refactor</em> main menu with some options to refactor our code. Also, we can right click over any element of the code (variable, method, class name...) and choose <em>Refactor</em> option. With these options we can:</p>
 <ul>
 <li><em>Refactor &gt; Rename</em>: Rename variables, classes, methods... and apply these changes to the whole code</li>
@@ -1496,7 +1478,7 @@
 <li><em>Refactor &gt; Extract superclass</em>: Extract a superclass with methods that will belong to this superclass.</li>
 <li>...</li>
 </ul>
-<h3 id="2-design-patterns">2. Design patterns<a class="headerlink" href="#2-design-patterns" title="Permanent link">&para;</a></h3>
+<h2 id="2-design-patterns">2. Design patterns<a class="headerlink" href="#2-design-patterns" title="Permanent link">&para;</a></h2>
 <p>There are some useful techniques that we can apply when we need to refactor our code: the design patterns. They are a repeteable solution for a problem in software design.</p>
 <p>The main advantages in using design patterns are:</p>
 <ul>
@@ -1506,14 +1488,14 @@
 <li>They provide a common vocabulary among developers</li>
 <li>They avoid reinventing the wheel</li>
 </ul>
-<h4 id="21-types-of-design-patterns">2.1. Types of design patterns<a class="headerlink" href="#21-types-of-design-patterns" title="Permanent link">&para;</a></h4>
+<h3 id="21-types-of-design-patterns">2.1. Types of design patterns<a class="headerlink" href="#21-types-of-design-patterns" title="Permanent link">&para;</a></h3>
 <p>According to the purpose, we can divide design patterns into these categories:</p>
 <ul>
 <li><strong>Creational patterns</strong>: They encapsulate the logic of the object instantiation, hiding the concrete details of every object. This way, we can just work with abstractions.</li>
 <li><strong>Structural patterns</strong>: They help us define how objects are composed.</li>
 <li><strong>Behavioral patterns</strong>: They help us define how objects interact between them.</li>
 </ul>
-<h4 id="22-factory-pattern">2.2. Factory Pattern<a class="headerlink" href="#22-factory-pattern" title="Permanent link">&para;</a></h4>
+<h3 id="22-factory-pattern">2.2. Factory Pattern<a class="headerlink" href="#22-factory-pattern" title="Permanent link">&para;</a></h3>
 <p><strong>Factory</strong> pattern is one of the most used patterns in Java. It is a creational pattern that provides one of the best ways of creating objects. Using this pattern lets us create objects without showing the logic of the creation to the user. We just use a common interface.</p>
 <p>For instance, let's go back to the <em>Shapes</em> example of previous documents. We had a <em>Shape</em> interface that was implemented by some classes, such as <em>Circle</em>, <em>Square</em> or <em>Rectangle</em>. Whenever we wanted to create an object, we had to call a concrete constructor:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Shape</span><span class="w"> </span><span class="n">myShape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
@@ -1630,15 +1612,19 @@
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInvoice</span><span class="p">.</span><span class="na">getAmountVAT</span><span class="p">());</span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInvoiceRed</span><span class="p">.</span><span class="na">getAmountVAT</span><span class="p">());</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Exercise 1:</strong></p>
-<p>Implement the <em>Factory</em> pattern in the Exercise 6 of <a href="05e">this document</a> as we have shown in previous example and test it.</p>
-<p><strong>Exercise 2:</strong></p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
+<p>Implement the <em>Factory</em> pattern in the Exercise 6 of <a href="05e.html">this document</a> as we have shown in previous example and test it.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 2</p>
 <p>Create a new project called <strong>Invoices</strong> with the packages <code>invoices.types</code>  for the invoice types, and  <code>invoices.main</code> with the main class. Implement the classes of the invoices example above, and add a new type of invoice with a super-reduced VAT (4%).</p>
-<p><strong>Exercise 3:</strong></p>
-<p>Update the <em>Animals</em> project of Exercise 1 of <a href="05e">this document</a> and add an <em>animal factory</em> so that we no longer use the constructor of each animal type. </p>
-</blockquote>
-<h4 id="23-singleton-pattern">2.3. Singleton pattern<a class="headerlink" href="#23-singleton-pattern" title="Permanent link">&para;</a></h4>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 3</p>
+<p>Update the <em>Animals</em> project of Exercise 1 of <a href="05e.html">this document</a> and add an <em>animal factory</em> so that we no longer use the constructor of each animal type. </p>
+</div>
+<h3 id="23-singleton-pattern">2.3. Singleton pattern<a class="headerlink" href="#23-singleton-pattern" title="Permanent link">&para;</a></h3>
 <p>This pattern is also a creational pattern that lets us manage just one single object of a given class. It is commonly used in classes that store configuration parameters for a given application, so that there should only be one object of this type for the whole application, and this object must be shared among all the components of the application.</p>
 <p><em>Singleton</em> pattern consists in having a static instance of the class itself, which will be returned every time we ask for a new instance from every part of the code. There will also be a private constructor that will be called only once to create the static attribute the first time it is needed.</p>
 <p>For instance, if we have a class to count the total number of invoices:</p>
@@ -1697,10 +1683,10 @@
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInvoiceRed</span><span class="p">.</span><span class="na">getAmountVAT</span><span class="p">());</span>
 <span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Exercise 4:</strong></p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 4</p>
 <p>Add the <code>InvoiceCounter</code> class to the <em>Invoices</em> project started in previous exercises. Make the appropriate changes to automatically increase the invoice counter as soon as we instantiate a new invoice from <code>InvoiceFactory</code>, so we don't need to increase it manually from the <em>main</em> method, as we did in previous example.</p>
-</blockquote>
+</div>
 
 
 
