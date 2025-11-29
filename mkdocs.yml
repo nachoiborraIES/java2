@@ -42,6 +42,7 @@ nav:
     - Classes and objects: 05a.md
     - Class relationships: 05b.md
     - Projects in IntelliJ: 05c.md
+    - Using static and final: 05d.md
 
 # Tema CSS
 theme:
