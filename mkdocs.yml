@@ -45,6 +45,11 @@ nav:
     - Using static and final: 05d.md
     - Abstract classes and interfaces: 05e.md
     - Design patterns: 05f.md
+  - Collections:
+    - Collection types: 06a.md
+    - Lists: 06b.md
+    - Maps, sets and trees: 06c.md
+    - More about collections: 06d.md
 
 # Tema CSS
 theme:
