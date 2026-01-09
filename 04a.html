@@ -1828,7 +1828,7 @@
 <p>Note that function names always start in lower case in Java (in C#, they start in uppercase if they are public).</p>
 <h3 id="11-returning-values">1.1. Returning values<a class="headerlink" href="#11-returning-values" title="Permanent link">&para;</a></h3>
 <p>Functions can return values. This values can be assigned to variables, or used in other expressions. In order to return a value from a function, its return type must be other than <em>void</em>, and we must use a <code>return</code> clause to specify the value returned. For instance, this function returns a welcome message:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="nf">welcome</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">welcome</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, welcome to this program!&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1843,7 +1843,7 @@
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// Option 1</span>
-<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">welcome</span><span class="p">();</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">welcome</span><span class="p">();</span>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Option 2</span>
