@@ -65,6 +65,10 @@ nav:
     - Documentation in Java projects: 09a.md
     - Documentation with IntelliJ: 09b.md
     - Documentation with Doxygen: 09c.md
+  - Java testing:
+    - Unit tests with JUnit: 10a.md
+    - Introduction to TDD: 10b.md
+    - Integration tests and CI: 10c.md
 
 # Tema CSS
 theme:
