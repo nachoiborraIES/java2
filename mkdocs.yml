@@ -61,6 +61,10 @@ nav:
     - Traditional management: 08a.md
     - New classes: 08b.md
     - Operations with dates and times: 08c.md
+  - Java documentation:
+    - Documentation in Java projects: 09a.md
+    - Documentation with IntelliJ: 09b.md
+    - Documentation with Doxygen: 09c.md
 
 # Tema CSS
 theme:
