@@ -45,11 +45,22 @@ nav:
     - Using static and final: 05d.md
     - Abstract classes and interfaces: 05e.md
     - Design patterns: 05f.md
+    - Additional exercises: 05g.md
   - Collections:
     - Collection types: 06a.md
     - Lists: 06b.md
     - Maps, sets and trees: 06c.md
     - More about collections: 06d.md
+  - File management:
+    - Accessing text files: 07a.md
+    - Accessing binary files: 07b.md
+    - Filesystem management: 07c.md
+    - Object serialization: 07d.md
+    - Additional exercises: 07e.md
+  - Date and time:
+    - Traditional management: 08a.md
+    - New classes: 08b.md
+    - Operations with dates and times: 08c.md
 
 # Tema CSS
 theme:
