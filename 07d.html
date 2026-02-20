@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://nahoiborraies.github.io/java2/01e.html">
+        <link rel="canonical" href="https://nahoiborraies.github.io/java2/07d.html">
       
       
-        <link rel="prev" href="01d.html">
+        <link rel="prev" href="07c.html">
       
       
-        <link rel="next" href="02a.html">
+        <link rel="next" href="07e.html">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Writing clean code - Java</title>
+        <title>Object serialization - Java</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#writing-clean-code" class="md-skip">
+        <a href="#object-serialization" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Writing clean code
+              Object serialization
             
           </span>
         </div>
@@ -258,10 +258,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -281,11 +279,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -306,7 +304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -461,37 +459,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Writing clean code
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="01e.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="01e.html" class="md-nav__link">
         
   
   
@@ -507,154 +478,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-introduction-to-clean-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Introduction to clean code
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Introduction to clean code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-what-is-clean-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.1. What is clean code?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-the-importance-of-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.2. The importance of practice
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-why-bad-code-exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3. Why bad code exists?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-whats-coming-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.4. What's coming next?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-dealing-with-variable-names" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Dealing with variable names
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Dealing with variable names">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-uppercase-or-lowercase" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1. Uppercase or lowercase?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-placing-comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Placing comments
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Placing comments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-good-comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1. Good comments
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-bad-comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2. Bad comments
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1611,8 +1434,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1630,11 +1455,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1655,7 +1480,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1754,10 +1579,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="07d.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object serialization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="07d.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1773,6 +1625,76 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-object-serialization-in-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Object serialization in Java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dealing-with-serialized-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dealing with serialized objects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dealing with serialized objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-serializing-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Serializing collections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-associations-and-serialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Associations and serialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1986,111 +1908,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-introduction-to-clean-code" class="md-nav__link">
+  <a href="#1-object-serialization-in-java" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Introduction to clean code
+        1. Object serialization in Java
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. Introduction to clean code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-what-is-clean-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.1. What is clean code?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-the-importance-of-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.2. The importance of practice
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-why-bad-code-exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3. Why bad code exists?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-whats-coming-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.4. What's coming next?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-dealing-with-variable-names" class="md-nav__link">
+  <a href="#2-dealing-with-serialized-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Dealing with variable names
+        2. Dealing with serialized objects
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Dealing with variable names">
+    <nav class="md-nav" aria-label="2. Dealing with serialized objects">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-uppercase-or-lowercase" class="md-nav__link">
+  <a href="#21-serializing-collections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1. Uppercase or lowercase?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-placing-comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Placing comments
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Placing comments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-good-comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1. Good comments
+        2.1. Serializing collections
       
     </span>
   </a>
@@ -2098,10 +1942,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-bad-comments" class="md-nav__link">
+  <a href="#22-associations-and-serialization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2. Bad comments
+        2.2. Associations and serialization
       
     </span>
   </a>
@@ -2130,187 +1974,80 @@
 
 
 
-<h1 id="writing-clean-code">Writing clean code<a class="headerlink" href="#writing-clean-code" title="Permanent link">&para;</a></h1>
+<h1 id="object-serialization">Object serialization<a class="headerlink" href="#object-serialization" title="Permanent link">&para;</a></h1>
 <div style="text-align: right">
-<a target="_blank" href="slides/view.html?fichero=01e"><img src="images/diapositivas.png" width="32" /></a>
+<a target="_blank" href="slides/view.html?fichero=07d"><img src="images/diapositivas.png" width="32" /></a>
 </div>
 
-<h2 id="1-introduction-to-clean-code">1. Introduction to clean code<a class="headerlink" href="#1-introduction-to-clean-code" title="Permanent link">&para;</a></h2>
-<p>When we are writing a program, we should not only think about what the program needs to do. We should also ask some other questions to ourselves, such as:</p>
-<ul>
-<li>What if I have to take this project back in two years? Will I understand the code?</li>
-<li>What if anyone else has to take this project in the future? Will he/she understand the code?</li>
-</ul>
-<p>After these questions, you should think of a way to write your code so that it will be easy to read and understand. This is where clean code rules come into play.</p>
-<h3 id="11-what-is-clean-code">1.1. What is clean code?<a class="headerlink" href="#11-what-is-clean-code" title="Permanent link">&para;</a></h3>
-<p>You can find many examples and good explanations to this question in the book <em>Clean Code</em>, by Robert C. Martin. Here we just summarize some of these ideas:</p>
-<ul>
-<li>Code must be elegant and easy to read, simple and direct. <em>Clean code reads like well-written prose</em> (Grady Booch).</li>
-<li>Logic should be straightforward to make it hard for bugs to hide.</li>
-<li>Performance should be close to optimal so as not to tempt people to make further changes.</li>
-<li>Keep in mind the Boy Scout rule: <em>Leave the campground cleaner than you found it</em></li>
-</ul>
-<h3 id="12-the-importance-of-practice">1.2. The importance of practice<a class="headerlink" href="#12-the-importance-of-practice" title="Permanent link">&para;</a></h3>
-<p>Writing clean code not only consists in reading documents like this one to keep in mind some rules. It also consists in putting into practice these rules continuously. For instance, you can read how to ride a bike, but you won't learn how to do it until you practice.</p>
-<p>Besides, if we don't start writing clean code from the beginning of a project, there may be some terrible consequences later: projects can grow too much, and then it may be hard to apply clean code rules to the whole code: the time we spend fixing the code in the future may affect deadlines, maintenance, future versions...</p>
-<h3 id="13-why-bad-code-exists">1.3. Why bad code exists?<a class="headerlink" href="#13-why-bad-code-exists" title="Permanent link">&para;</a></h3>
-<p>Although everyone should apply clean code rules in their programs, and we can easily see the benefits of working this way, there are many reasons why bad code exists:</p>
-<ul>
-<li>Too tight schedules</li>
-<li>Unexperienced project managers</li>
-<li>Programmer's docility (he/she doesn't want to get fired)</li>
-<li>Boredom (always doing the same kind of projects)</li>
-<li>...</li>
-</ul>
-<h3 id="14-whats-coming-next">1.4. What's coming next?<a class="headerlink" href="#14-whats-coming-next" title="Permanent link">&para;</a></h3>
-<p>In this document we are going to focus on some basic aspects of clean code rules, such as how to assign variable names and how to place comments in our code.</p>
-<h2 id="2-dealing-with-variable-names">2. Dealing with variable names<a class="headerlink" href="#2-dealing-with-variable-names" title="Permanent link">&para;</a></h2>
-<p>Names are essential in programming, since we will assign a name to (almost) everything we include in our program. At this point you should already know what a variable is and its main purpose (store values that can be modified along the program execution). But you should not assign a variable name carelessly. You should use <strong>meaningful names</strong> for your variables. </p>
-<p>When reading the name of a variable (or any other element in the code), it must answer some basic questions, such as why it exists, what it does and how it is used. If a name requires a comment to explain its meaning, then it is not a suitable name. For instance, if we want to store in a variable the age average of a list of people, we should NOT do this:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">          </span><span class="c1">// Age average</span>
-</code></pre></div>
-<p>We could do this instead:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">ageAverage</span><span class="p">;</span>
-</code></pre></div>
-<p>Some other aspects that we should take into account when dealing with variable names:</p>
-<ul>
-<li>Try not to use too similar names. Variables like <code>totalRegisteredUsers</code> and <code>totalUnregisteredUsers</code> only differ in two letters, and you could use the wrong one in a given piece of code. It's better to call them <code>registered</code> and <code>anonymous</code>.</li>
-<li>Add <strong>meaningful context</strong> when it's necessary. For instance, if a variable is named <code>account</code>, what does it mean? A user account? a bank account? It's better to be more specific, and call it <code>bankAccount</code>, for instance</li>
-<li>Choose <strong>one word per concept</strong>: if you declare many variables in many parts of your code to refer to a user login, you should always call them in the same way: <code>user</code>, or <code>login</code>, for instance, but don't change the name in each situation.</li>
-<li>Don't use short names, such as <code>n</code>, or <code>e</code>, because it will be difficult to find your variable among other similar words in the text.</li>
-<li>Try to use readable names. It's better to use a name like <code>birthDate</code> than <code>ddmmyyyy</code>, because you can pronounce this name in a conversation.</li>
-</ul>
-<h3 id="21-uppercase-or-lowercase">2.1. Uppercase or lowercase?<a class="headerlink" href="#21-uppercase-or-lowercase" title="Permanent link">&para;</a></h3>
-<p>The use of uppercase and lowercase letters in names depend on the programming language itself. There are mainly four naming standards:</p>
-<ul>
-<li><strong>Camel Case</strong>: it is used in languages such as Java or Javascript. Every word in the variable name starts with upper case, apart from the first word. For instance:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">personName</span><span class="p">;</span>
-</code></pre></div>
-<ul>
-<li>There is a subset of camel case standard, called <strong>Pascal Case</strong> in which the first word of the name also starts with uppercase. This subset is employed by C# to define public elements (private elements are named using camel case). For instance:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="kt">string</span><span class="w"> </span><span class="n">personName</span><span class="p">;</span>
-<span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PersonAge</span><span class="p">;</span>
-</code></pre></div>
-<ul>
-<li><strong>Snake Case</strong>: it is used in languages such as PHP or Python. Variable words are separated by underscores:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="x">$person_name = &quot;Nacho&quot;;</span>
-</code></pre></div>
-<ul>
-<li><strong>Kebab Case</strong>: variable words are separated by hyphens. It is not very popular among programming languages, since many of them don't allow the hyphen as part of the variable name (so as not to mix it up with the substraction operator). There are some few examples, such as Lisp or Clojure.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nv">person-name</span><span class="w"> </span><span class="s">&quot;Nacho&quot;</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li><strong>Upper case</strong>: it is used in many languages to define constants. The words of the name are usually separated by underscores, as in snake case standard:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAXIMUM_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
-</code></pre></div>
-<h2 id="3-placing-comments">3. Placing comments<a class="headerlink" href="#3-placing-comments" title="Permanent link">&para;</a></h2>
-<p>Well-placed comments help us understand the code around them, whereas misplaced comments can damage the understanding of the code. Some programmers think that comments are failures, and should be avoided as much as possible. One of the reasons argued is that they are hard to maintain. If we change the code after writing a comment, we may forget to update the comment, and thus it would talk about something that is no longer present in the code.</p>
-<p>Another reason to avoid comments is that they are tightly linked to bad code. When we write bad code, we often think that we can write some comments to make it understandable, instead of cleaning the code itself.</p>
-<p>In this section we will learn where to put comments. Firstly, we will see what type of comments are necessary (what we call <em>good comments</em>), and then we will see what comments are avoidable (<em>bad comments</em>).</p>
-<h3 id="31-good-comments">3.1. Good comments<a class="headerlink" href="#31-good-comments" title="Permanent link">&para;</a></h3>
-<p>The following comments are considered necessary:</p>
-<ul>
-<li><strong>Legal comments</strong>, such as copyright or authorship, according to the company standards. This type of comments are normally placed at the beginning of each source file that belongs to the author or company.</li>
-<li><strong>Introduction comments</strong>, a short comment at the beginning of each source file (typically classes) that explains the main purpose of this source file or class. This comment is usually placed along with a legal comment at the beginning of a source file:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
-<span class="cm"> This class stores information about a user account</span>
-
-<span class="cm"> Created by Nacho Iborra</span>
-<span class="cm"> */</span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span>
+<p>Serialization is the process of converting an object into a sequence of bytes, so that we can easily store it or send it through some communication channel or stream. In this document we are going to learn how to serialize objects into binary files. This way, we can easily store them from our applications, and retrieve them whenever we want.</p>
+<h2 id="1-object-serialization-in-java">1. Object serialization in Java<a class="headerlink" href="#1-object-serialization-in-java" title="Permanent link">&para;</a></h2>
+<p>In order to serialize the objects of a class, we firstly need to identify this class as <em>serializable</em>. This can be easily done by just implementing <code>Serializable</code> interface. This interface has no methods, so it just help us identify the affected class as serializable:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Serializable</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li><strong>Explanation of intent</strong>. These comments are used when:</li>
-<li>We tried to get a better solution to the problem but we could not, and then we explain that a part of the code could be improvable.</li>
-<li>There is a part of the code that does not follow the same pattern than the code around it (for instance, an integer variable among a bunch of floats), and we want to explain why we have used this instruction or data type.</li>
-<li><strong>TODO comments</strong>, which are placed in incomplete parts. They help us remember all the pending tasks. This type of comments have become so popular that a lot of IDEs automatically detect and highlight them.</li>
-<li><strong>API documentation</strong>. Some programming languages, such as Java or C#, let us add some comments in some parts of the code so that these comments are exported to HTML or XML format, and become part of the documentation. </li>
-</ul>
-<h3 id="32-bad-comments">3.2. Bad comments<a class="headerlink" href="#32-bad-comments" title="Permanent link">&para;</a></h3>
-<p>The following are examples of bad comments that we can avoid...</p>
-<p>Some type of <strong>information comments</strong> can be avoided by changing the name of the element that they are explaining. For instance, if we have this comment with this variable:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Total number of customers</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
-</code></pre></div>
-<p>We can avoid the comment by renaming the variable this way:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">totalCustomers</span><span class="p">;</span>
-</code></pre></div>
-<p><strong>Redundant comments</strong>, i.e. comments that are longer to read than the code they are trying to explain, or they are just unnecessary, because the code is self-explanatory. For instance, the following comment is redundant, since the code it is explaining is quite understandable:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* We ask the user two numbers and add them */</span>
-<span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter two numbers&quot;</span><span class="p">);</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span><span class="p">);</span>
-</code></pre></div>
-<p><strong>Comments without context</strong>, i.e. comments that are not followed by the corresponding code. For instance, the following comment is not completed with appropriate code. We say we are writing data into a file, but nothing is executed after that. Maybe there was some piece of code, but it was removed.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* We ask the user two numbers and add them */</span>
-<span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter two numbers&quot;</span><span class="p">);</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span><span class="p">);</span>
-<span class="c1">// We print the result in a text file</span>
-</code></pre></div>
-<p>There should be no <strong>mandated comments</strong>. Some people think that every variable, for instance, must have a comment explaining its purpose. But that is not a good decision, since we can avoid most of these comments by using appropriate variable names.</p>
-<p>Also, there should be no <strong>journal comments</strong>: sometimes an edit registry is placed at the beginning of a source file. It contains all the changes made to the code, including the date and the reason of the change. But nowadays, we can use version control applications, such as GitHub, to keep this registry out of the code itself.</p>
-<p>Some time ago, some programmers used to place some <strong>position markers and/or code dividers</strong>,  to quickly find a place in the code, or to separate some code blocks that are quite long. Both types of comments are not recommended if code is properly formatted.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// =================== VARIABLES ====================</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
-<span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="p">...</span>
-<span class="c1">// =================== MAIN =========================</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<p>In order for a class to be serializable, every internal attribute must also be serializable (or a simple data type). If there's any attribute that we don't want to serialize, we need to tag it as <code>transient</code>. In the following example, whenever we serialize <code>Person</code> objects, we are going to store person's name, but not his/her age:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Serializable</span>
 <span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">transient</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+
 <span class="w">    </span><span class="p">...</span>
-<span class="w">    </span><span class="c1">////// FINAL RESULT</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Closing brace comments</strong> are also not recommended. They are placed at every closing brace to explain which element is this brace closing. These comments can be avoided, since most of current IDEs highlight each pair of braces when we click on them, so that we can match each pair automatically. </p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<h2 id="2-dealing-with-serialized-objects">2. Dealing with serialized objects<a class="headerlink" href="#2-dealing-with-serialized-objects" title="Permanent link">&para;</a></h2>
+<p>If we want to manage serialized objects in Java, we need to make use of two special classes:</p>
+<ul>
+<li><code>ObjectInputStream</code> class lets us read serialized objects from a file or input channel, through the <code>readObject</code> method</li>
+<li><code>ObjectOutputStream</code> class lets us write serialized objects to a file or output channel, through the <code>writeObject</code> method</li>
+</ul>
+<p>This is an example of how we can write serialized objects to a file:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">(</span><span class="n">ObjectOutputStream</span><span class="w"> </span><span class="n">oos</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectOutputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="s">&quot;people.dat&quot;</span><span class="p">)))</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// end main</span>
+<span class="w">    </span><span class="n">oos</span><span class="p">.</span><span class="na">writeObject</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">));</span>
+<span class="w">    </span><span class="n">oos</span><span class="p">.</span><span class="na">writeObject</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Susan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error storing people&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
-<p><strong>Warnings</strong> are used when we have some code that may cause problems in certain situations, because it needs to be reviewed. It is very usual to find some code blocks completely commented, and a warning message explaining the problem with it. These comments should be turned into "TODO" comments, in order to warn the programmer that this code needs to be reviewed in the future, instead of just removing the comments.</p>
-<div class="admonition quote">
-<p class="admonition-title">Exercise 1</p>
-<p>This program asks the user to introduce three numbers and gets the average of them. Discuss in class which parts of the code are not clean or could be improved, regarding variable names and comments.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AverageNumbers</span>
+<p>This example reads information previously serialized:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">(</span><span class="n">ObjectInputStream</span><span class="w"> </span><span class="n">ois</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">&quot;people.dat&quot;</span><span class="p">)))</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Variables to store the three numbers and the average</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">n3</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">Result</span><span class="p">;</span>
-<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-
-<span class="w">        </span><span class="c1">// We ask the user to enter three numbers</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce three numbers:&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="w">        </span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="w">        </span><span class="n">n3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="w">        </span><span class="c1">// The result is the average of these numbers</span>
-<span class="w">        </span><span class="cm">/* We could have used a float number instead, </span>
-<span class="cm">            but we decided to keep this program as </span>
-<span class="cm">            simple as we could */</span>
-<span class="w">        </span><span class="n">Result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="o">+</span><span class="n">n3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The average is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Result</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="p">)(</span><span class="n">ois</span><span class="p">.</span><span class="na">readObject</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error storing people&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
+<p>Regarding the object reader, there's no way to detect the end of file. Instead of this, an <code>EOFException</code> (<em>End-Of-File Exception</em>) is produced. That's why, if we want to read until the end of file, we actually implement and endless loop and wait until the exception is thrown.</p>
+<h3 id="21-serializing-collections">2.1. Serializing collections<a class="headerlink" href="#21-serializing-collections" title="Permanent link">&para;</a></h3>
+<p>We can also serialize arrays or collections of data, as long as the objects contained in this collection are also serializable:</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">people</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(...));</span>
+<span class="n">people</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(...));</span>
+<span class="n">oos</span><span class="p">.</span><span class="na">writeObject</span><span class="p">(</span><span class="n">people</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">people2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="p">)(</span><span class="n">ois</span><span class="p">.</span><span class="na">readObject</span><span class="p">());</span>
+</code></pre></div>
+<h3 id="22-associations-and-serialization">2.2. Associations and serialization<a class="headerlink" href="#22-associations-and-serialization" title="Permanent link">&para;</a></h3>
+<p>If we have an association between two classes whose objects are being serialized, we don't need to care about the association when we retrieve the data from the file. For instance, if we store a couple of books sharing the same author, this author will still be shared between these books when we read them from the file.</p>
+<div class="admonition quote">
+<p class="admonition-title">Exercise 1</p>
+<p>Create a project called <strong>TaskSerializer</strong>, with the following elements:</p>
+<ul>
+<li>A class called <code>Task</code> to represent tasks to be done. For each task we are going to store its description and the date to be finished (a string with the format <em>dd/mm/yyyy</em>).</li>
+<li>The main program will try to read a list of tasks stored in a file called <em>tasks.dat</em> at the beginning, and print them in the screen. Then, it will ask the user if he/she wants to add a new task to the list. At the end, the new list will be written in the file before closing the program.</li>
+</ul>
 </div>
 
 
@@ -2347,7 +2084,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="01d.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic input and output">
+          <a href="07c.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Filesystem management">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2357,20 +2094,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Basic input and output
+                Filesystem management
               </div>
             </div>
           </a>
         
         
           
-          <a href="02a.html" class="md-footer__link md-footer__link--next" aria-label="Next: Boolean type and operators">
+          <a href="07e.html" class="md-footer__link md-footer__link--next" aria-label="Next: Additional exercises">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Boolean type and operators
+                Additional exercises
               </div>
             </div>
             <div class="md-footer__button md-icon">
